@@ -1,6 +1,5 @@
-import ReactDOM from "react-dom";
 import styles from "../styles/mensajesfoto.module.css";
-import { Layout, Avatar, UserOutlined, List, Row, Col, Button } from "antd";
+import { Layout, Avatar, List, Row, Col, Button } from "antd";
 
 const { Header, Sider, Content } = Layout;
 
