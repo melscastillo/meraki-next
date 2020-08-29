@@ -1,0 +1,25 @@
+.wrapper {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.pTittle {
+  color: rgba(43, 45, 66, 1);
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 1px 1px 2px lightblue;
+}
+
+.pText {
+  color: rgba(105, 131, 150, 1);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.inputs {
+  border-color: rgba(105, 131, 150, 0.46);
+  
+}
