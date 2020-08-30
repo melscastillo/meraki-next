@@ -1,4 +1,4 @@
-const URL_BASE = " https://meraki-app-reliable-rhinocerous-vx.mybluemix.net/";
+const URL_BASE = " http://localhost:8080/";
 
 const getClients = async () => {
   const response = await fetch(`${URL_BASE}clients`);
@@ -10,16 +10,17 @@ const getClient = async (id) => {
   return await response.json();
 };
 
-const Login = async (email, password) => {
-  const response = await fetch(`${URL_BASE}clients/login`, {
+const signUp = async (request) => {
+  const response = await fetch(`${URL_BASE}authClients/sign-up`, {
     method: "POST",
-    mode: "cors",
-    body: JSON.stringify({
-      email,
-      password,
-    }),
+    body: JSON.stringify(request),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
-  return await response.json();
+  const posts = await response.json();
+
+  return posts;
 };
 
-export { getClient, getClients, Login };
+export { getClient, getClients, signUp };

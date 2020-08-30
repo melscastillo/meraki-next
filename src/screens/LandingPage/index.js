@@ -1,5 +1,4 @@
 import styles from "./LandingPage.module.css";
-import stylesNav from "../../components/Navbar/Navbar.module.css";
 
 import { Row, Col } from "antd";
 import { Card } from "antd";
