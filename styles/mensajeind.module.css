@@ -50,6 +50,13 @@
 
 .content {
   background: white;
+  position: absolute;
+  left: 92.08%;
+  right: -30.07%;
+  top: 6.18%;
+  bottom: 70.23%;
+
+  background: #698396;
 }
 .mensaje {
   background: rgba(105, 131, 150, 0.46);
