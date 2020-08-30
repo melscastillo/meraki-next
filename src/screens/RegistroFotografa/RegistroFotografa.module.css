@@ -1,0 +1,121 @@
+.submit {
+    color: #fff;
+    background-color: #9bbfb8;
+    font-weight: bolder;
+    box-shadow: 10px grey;
+    height: 60px;
+    width: 250px;
+    text-align: center;
+    margin-bottom: 95px;
+    margin-top:50px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #ddd;
+} 
+
+.submit:hover{
+    border: 2px solid #9bbfb8;
+    color: #9bbfb8;
+
+}
+
+.typography {
+    font-family: 'Raleway', sans-serif;
+}
+
+.imageSidebar{
+    min-width: 450px;
+    max-width: 100%;
+    height: 1046px;
+
+}
+
+.logo{
+    color: #2b2d42;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.title{
+    color: #2b2d42;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 3px 2px 3px #ddd; 
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.iniciaSesion{
+    color: #df928e;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 3px 2px 3px #ddd; 
+    text-align: center;
+}
+
+
+.formItem label{
+    margin: 0 auto !important;
+}
+
+.formItem input, .formItem textarea{
+    background-color: #6983968a; 
+    border: 0px;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.uploadButton, .uploadButton:focus {
+    background-color: #df928e;
+    color: #fff;
+    height: 40px;
+    font-weight: 700;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #ddd;
+    margin-bottom: 10px;
+
+
+}
+
+.uploadButton:hover{
+    color: #df928e;
+    border: 1px solid #df928e;
+}
+
+.uploadButton:hover svg{
+    fill: #df928e;
+}
+
+.uploadButton svg{
+    margin-right: 10px;
+    fill: #fff;
+} 
+
+.socialInput{
+    display: flex;
+    justify-content: space-between;
+}
+
+.aside{
+    
+    background-image: url("/images/photo-1558234608-ae0b60563965.jpeg");
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.aside p{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 45px;
+    text-align: center;
+    width: 450px;
+    text-shadow: 1px 1px 2px #ddd
+
+    
+}
