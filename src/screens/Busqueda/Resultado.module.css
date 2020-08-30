@@ -1,0 +1,20 @@
+.card{
+    width: 100%;
+    position: relative;
+    border-radius: 15px;
+    border: 10px solid #fff;
+    margin-bottom: 25px;
+    
+}
+ .card img{
+     border-radius: 10px;
+ }
+.cardName{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #9bbfb8;
+
+}

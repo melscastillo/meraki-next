@@ -54,9 +54,6 @@
     text-align: center;
 }
 
-.formItem{
-    
-}
 
 .formItem label{
     margin: 0 auto !important;
@@ -100,11 +97,6 @@
 .socialInput{
     display: flex;
     justify-content: space-between;
-}
-
-.socialInput input{
-    width: 90%;
-    margin-left: 25px;
 }
 
 .aside{
