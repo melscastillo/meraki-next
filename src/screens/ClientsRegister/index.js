@@ -5,6 +5,7 @@ import { Row, Col, Form, Input, InputNumber, Button } from "antd";
 import { signUp } from "../../server";
 
 function ClientsRegister() {
+  const [form] = Form.useForm();
   const [nameCt, setnameCt] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setemail] = useState("");
@@ -101,13 +102,14 @@ function ClientsRegister() {
             </div>
             <div>
               <Form
+                form={form}
                 layout="vertical"
                 name="nest-messages"
                 onFinish={onFinish}
                 validateMessages={validateMessages}
               >
                 <Form.Item
-                  name={["user", "name"]}
+                  name={"name"}
                   label="Name"
                   rules={[
                     {
@@ -124,7 +126,7 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={["user", "LastName"]}
+                  name={"lastName"}
                   label="Last name"
                   rules={[
                     {
@@ -141,7 +143,7 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={["user", "email"]}
+                  name={"email"}
                   label="Email"
                   rules={[
                     {
@@ -160,7 +162,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   label="Password"
-                  name={["user", "password"]}
+                  name={"password"}
                   rules={[
                     {
                       required: true,
@@ -178,7 +180,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   label="phone"
-                  name={["user", "phone"]}
+                  name={"phone"}
                   rules={[
                     {
                       required: true,
@@ -195,7 +197,7 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={["user", "adress"]}
+                  name={"adress"}
                   label="Address"
                   rules={[
                     {
@@ -213,7 +215,7 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={["user", "imageProfile"]}
+                  name={"profilepicture"}
                   label="Prueba de foto de perfil"
                   rules={[
                     {
