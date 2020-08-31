@@ -7,11 +7,33 @@ import {
   LockOutlined,
 } from "@ant-design/icons";
 
+import { loginClients, loginPhotographers } from "../../server";
+
 import Navbar from "../../components/Navbar";
 
 function Login() {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+  const onFinish = async (values) => {
+    console.log(values);
+    try {
+      const response = await loginClients(values);
+      if (!response.success) {
+        console.log("Paso a la segunda peticion");
+        const response2 = await loginPhotographers(values);
+        if (!response2.success) {
+          console.log("Error: ", response2.error);
+          return;
+        }
+        const accessToken = response2.data.token;
+        console.log("Response 2:", accessToken);
+        localStorage.setItem("token", accessToken);
+      } else {
+        const accessToken = response.data.token;
+        console.log(accessToken);
+        localStorage.setItem("token", accessToken);
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
   };
   return (
     <>
@@ -40,7 +62,7 @@ function Login() {
                 onFinish={onFinish}
               >
                 <Form.Item
-                  name="username"
+                  name="email"
                   rules={[
                     { required: true, message: "Please input your Username!" },
                   ]}
@@ -66,11 +88,11 @@ function Login() {
                     />
                   </Form.Item>
                 </Form.Item>
-                <Form.Item>
+                {/*                 <Form.Item>
                   <Form.Item name="remember" valuePropName="checked" noStyle>
                     <Checkbox>Remember me</Checkbox>
                   </Form.Item>
-                </Form.Item>
+                </Form.Item> */}
 
                 <Form.Item>
                   <Button
