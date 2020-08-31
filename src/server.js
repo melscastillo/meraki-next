@@ -23,4 +23,16 @@ const signUp = async (request) => {
   return posts;
 };
 
-export { getClient, getClients, signUp };
+const signUpPhotographers = async (request) => {
+  const response = await fetch(`${URL_BASE}photoUser/sign-up`, {
+    method: "POST",
+    body: JSON.stringify(request),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const posts = await response.json();
+  return posts;
+};
+
+export { getClient, getClients, signUp, signUpPhotographers };
