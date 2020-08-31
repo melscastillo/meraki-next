@@ -1,15 +1,11 @@
 import styles from "./LandingPage.module.css";
-
-import { Row, Col } from "antd";
-import { Card } from "antd";
-import { Carousel } from "antd";
-
+import { Row, Col, Card, Carousel } from "antd";
 import Navbar from "../../components/Navbar";
 
 function LandingPage() {
   return (
     <>
-      <Row>
+      <Row className= {styles.typography}>
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <Navbar />
         </Col>
@@ -28,14 +24,14 @@ function LandingPage() {
           </div>
         </Col>
       </Row>
-      <Row>
+      <Row className = {styles.typography}>
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <div className={styles.spacer}>
             <h2 className={styles.h2}>Ventajas de usar Meraki</h2>
           </div>
         </Col>
       </Row>
-      <Row>
+      <Row className= {styles.typography}>
         <Col xs={24} sm={24} md={8} lg={8} xl={8}>
           <div className={styles.cards}>
             <Card
