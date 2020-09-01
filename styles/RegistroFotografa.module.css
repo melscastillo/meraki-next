@@ -2,7 +2,6 @@
     color: #fff;
     background-color: #9bbfb8;
     font-weight: bolder;
-    box-shadow: 10px grey;
     height: 60px;
     width: 250px;
     text-align: center;
@@ -18,7 +17,6 @@
 .submit:hover{
     border: 2px solid #9bbfb8;
     color: #9bbfb8;
-
 }
 
 
