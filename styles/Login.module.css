@@ -1,13 +1,45 @@
 .wrapper {
   margin-top: 1rem;
   display: flex;
-  width: 100%;
   justify-content: space-evenly;
+}
+
+.nav_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.button_pink {
+  border-radius: 10px;
+  background: #df928e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 1rem;
+  height: 45px;
+  box-shadow: 5px 5px 5px #dddddd;
+  margin: auto;
+  padding: 5px 30px;
+}
+.button_pink:hover,
+.button_pink:focus {
+  outline: none;
+  border: 1px solid #df928e;
+  box-shadow: 5px 5px 5px #dddddd;
+  color: #df928e;
+}
+
+.meraki {
+  font-size: 35px;
+  font-weight: 900;
+  margin: 0;
 }
 
 .pTittle {
   color: rgba(43, 45, 66, 1);
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bolder;
   text-align: center;
   text-shadow: 1px 1px 2px lightblue;
@@ -19,7 +51,50 @@
   text-align: center;
 }
 
-.inputs {
-  border-color: rgba(105, 131, 150, 0.46);
-  
+.meraki_input {
+  border-radius: 10px;
+  background: #2b2d42;
+  border: none;
+  padding: 5px 20px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+}
+.meraki_input:focus {
+  outline: none;
+}
+
+.input_item div[role="alert"] {
+  text-align: right;
+}
+
+.input_item label {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.button_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.login_form_button {
+  border-radius: 10px;
+  background: #9bbfb8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  width: 250px;
+  font-size: 20px;
+  height: 60px;
+  box-shadow: 5px 5px 5px #dddddd;
+  margin: auto;
+}
+.login_form_button:focus,
+.login_form_button:hover {
+  outline: none;
+  border: 1px solid #9bbfb8;
+  box-shadow: 5px 5px 5px #dddddd;
+  color: #9bbfb8;
 }

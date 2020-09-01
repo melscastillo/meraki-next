@@ -15,11 +15,6 @@
   font-weight: 900;
   margin: 0;
 }
-
-.sider {
-  background: #2b2d42;
-}
-
 .list {
   display: flex;
   flex-direction: column;
@@ -52,46 +47,12 @@
   text-decoration: none;
 }
 
-.title {
-  font-size: 36px;
-  font-weight: 900;
-  text-align: center;
-  margin-top: 30px;
-  color: #383b56;
-}
-
 .content {
   background: white;
-}
-.message_card {
-  font-weight: bold;
-  font-size: 17px;
-  padding: 15px 30px;
-  background: rgba(105, 131, 150, 0.46);
-  margin-bottom: 10px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #383b56;
+  padding: 10px 30px;
 }
 
-.text_wrapper {
+.card_wrapper {
   display: flex;
-  flex-direction: column;
-}
-
-.button {
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  background: #9bbfb8;
-  margin-left: 90px;
-  padding: 5px 40px;
-  border: none;
-}
-.button:hover {
-  background: #2b2d42;
-  color: white;
-  border: none;
+  justify-content: space-evenly;
 }
