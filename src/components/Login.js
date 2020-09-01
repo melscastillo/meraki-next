@@ -1,4 +1,4 @@
-import styles from "./Login.module.css";
+import styles from "../../styles/Login.module.css";
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 import {
   EyeInvisibleOutlined,
@@ -7,9 +7,9 @@ import {
   LockOutlined,
 } from "@ant-design/icons";
 
-import { loginClients, loginPhotographers } from "../../server";
+import { loginClients, loginPhotographers } from "../server";
 
-import Navbar from "../../components/Navbar";
+import Navbar from "./Navbar";
 
 function Login() {
   const onFinish = async (values) => {

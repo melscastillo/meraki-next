@@ -1,8 +1,8 @@
-import styles from "./clientsRegister.module.css";
+import styles from "../../styles/clientsRegister.module.css";
 import React, { useState } from "react";
 import { Row, Col, Form, Input, InputNumber, Button } from "antd";
 
-import { signUp } from "../../server";
+import { signUp } from "../server";
 
 function ClientsRegister() {
   const [form] = Form.useForm();
