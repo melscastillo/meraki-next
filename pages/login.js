@@ -1,4 +1,4 @@
-import Login from "../src/screens/Login";
+import Login from "../src/components/Login";
 
 function Loginpage() {
   return <Login />;

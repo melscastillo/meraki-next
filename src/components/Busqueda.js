@@ -1,6 +1,6 @@
 import { Row, Col, Form, Input, Button, Select, Card, Avatar } from "antd";
 import cx from "classnames"
-import styles from "./Busqueda.module.css";
+import styles from "../../styles/Busqueda.module.css";
 import Resultado from "./Resultado"
 
 const Busqueda = () => {

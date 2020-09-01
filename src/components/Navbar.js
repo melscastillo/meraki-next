@@ -1,5 +1,5 @@
 //CSS
-import styles from "./Navbar.module.css";
+import styles from "../../styles/Navbar.module.css";
 import { Button, Row, Col } from "antd";
 
 function Navbar() {

@@ -1,4 +1,4 @@
-import ClientsRegister from "../../src/screens/ClientsRegister";
+import ClientsRegister from "../../src/components/Registro_clientes";
 
 function ClientsRegisterPage() {
   return <ClientsRegister />;

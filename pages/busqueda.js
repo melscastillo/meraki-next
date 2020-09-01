@@ -1,6 +1,6 @@
 
 import Head from "next/head";
-import Busqueda from "../src/screens/Busqueda"
+import Busqueda from "../src/components/Busqueda";
 
 const BusquedaPage = () =>{
     return (
