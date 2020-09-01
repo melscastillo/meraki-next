@@ -6,7 +6,7 @@ import Resultado from "./Resultado"
 const Busqueda = () => {
   return (
     <>
-      <Row className = {styles.typography}>
+      <Row>
         <Col  className = {styles.logo} offset={1} span={16}>
           MERAKI
         </Col>
