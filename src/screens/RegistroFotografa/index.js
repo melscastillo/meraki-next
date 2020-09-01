@@ -4,7 +4,7 @@ import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
 import styles from "./RegistroFotografa.module.css";
 
 import { signUpPhotographers } from "../../server";
-import App from "../../components/DropZone";
+import Previews from "../../components/DropZone";
 
 const RegistroFotografa = () => {
   const [form] = Form.useForm();
@@ -146,7 +146,7 @@ const RegistroFotografa = () => {
               </ul>
 
               <div>
-                <App />
+                <Previews />
               </div>
               <p>
                 Antes de unirte te invitamos a leer y aceptar nuestros{" "}

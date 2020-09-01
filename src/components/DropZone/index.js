@@ -1,73 +1,96 @@
-import React, { Component, Fragment } from "react";
-import { render } from "react-dom";
+import React, { useEffect, useState } from "react";
+import { useDropzone } from "react-dropzone";
 
-import ReactDropzone from "react-dropzone";
-import request from "superagent";
+const dragContainer = {
+  flex: 1,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: "20px",
+  borderWidth: "2px",
+  borderRadius: "2px",
+  borderColor: "#eeeeee",
+  borderStyle: "dashed",
+  backgroundColor: "#fafafa",
+  color: "#bdbdbd",
+  outline: "none",
+  transition: "border .24s ease-in-out",
+};
+const thumbsContainer = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  marginTop: 16,
+  marginBottom: "4rem",
+};
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const thumb = {
+  display: "inline-flex",
+  borderRadius: 2,
+  border: "1px solid #eaeaea",
+  marginBottom: 8,
+  marginRight: 8,
+  width: 100,
+  height: 100,
+  padding: 4,
+  boxSizing: "border-box",
+};
 
-    this.state = {
-      files: [],
-    };
-  }
+const thumbInner = {
+  display: "flex",
+  minWidth: 0,
+  overflow: "hidden",
+};
 
-  onDrop = (files) => {
-    // POST to a test endpoint for demo purposes
-    const req = request.post(
-      "https://s3.console.aws.amazon.com/s3/buckets/meraki-app/Meraki"
-    );
+const img = {
+  display: "block",
+  width: "auto",
+  height: "100%",
+};
 
-    files.forEach((file) => {
-      req.attach(file.name, file);
-    });
+function Previews(props) {
+  console.log("props", props);
+  const [files, setFiles] = useState([]);
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: "image/*",
+    onDrop: (acceptedFiles) => {
+      setFiles(
+        acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        )
+      );
+      // send imaages to S3
+      console.log("send images to s3", acceptedFiles);
+    },
+  });
 
-    req.end();
-  };
-
-  onPreviewDrop = (files) => {
-    this.setState({
-      files: this.state.files.concat(files),
-    });
-  };
-
-  render() {
-    const previewStyle = {
-      display: "inline",
-      width: 100,
-      height: 100,
-    };
-
-    return (
-      <div className="app">
-        <h2>Image Previews</h2>
-        {/*         <ReactDropzone accept="image/*" onDrop={this.onPreviewDrop}>
-          Drop an image, get a preview!
-        </ReactDropzone> */}
-        <ReactDropzone onDrop={(acceptedFiles) => console.log(acceptedFiles)}>
-          {({ getRootProps }) => (
-            <div {...getRootProps()}>
-              <p>Drop files here, or click to select files</p>
-            </div>
-          )}
-        </ReactDropzone>
-        {this.state.files.length > 0 && (
-          <div>
-            <h3>Previews</h3>
-            {this.state.files.map((file) => (
-              <img
-                alt="Preview"
-                key={file.preview}
-                src={file.preview}
-                style={previewStyle}
-              />
-            ))}
-          </div>
-        )}
+  const thumbs = files.map((file) => (
+    <div style={thumb} key={file.name}>
+      <div style={thumbInner}>
+        <img src={file.preview} style={img} />
       </div>
-    );
-  }
+    </div>
+  ));
+
+  useEffect(
+    () => () => {
+      // Make sure to revoke the data uris to avoid memory leaks
+      files.forEach((file) => URL.revokeObjectURL(file.preview));
+    },
+    [files]
+  );
+
+  return (
+    <section className="container">
+      <div {...getRootProps({ className: "dropzone" })} style={dragContainer}>
+        <input {...getInputProps()} />
+        <p>Arrastra tus fotos aqui, o has click para seleccionar archivos</p>
+      </div>
+      <aside style={thumbsContainer}>{thumbs}</aside>
+    </section>
+  );
 }
 
-export default App;
+export default Previews;
