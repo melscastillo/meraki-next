@@ -24,25 +24,26 @@ function LandingPage() {
           </div>
         </Col>
       </Row>
-      <Row className = {styles.typography}>
+      <Row>
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <div className={styles.spacer}>
             <h2 className={styles.h2}>Ventajas de usar Meraki</h2>
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+
+        <Row>
+        <Col span={24}>
           <div className={styles.cards}>
             <Card
               className={styles.insideCard}
               hoverable
-              style={{ width: 320, height: 320 }}
+              style={{ width: 419, height: 414 }}
               cover={
                 <img
                   className={styles.imgCard}
                   alt="example"
-                  src="/images/undraw_photo_sharing_1_85vy.svg"
+                  src="/images/undraw_social_ideas_e8rj.svg"
                 />
               }
             >
@@ -54,19 +55,16 @@ function LandingPage() {
                 </p>
               </div>
             </Card>
-          </div>
-        </Col>
-
-        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-          <div className={styles.cards}>
+        
             <Card
+              className={styles.insideCard}
               hoverable
-              style={{ width: 320, height: 320 }}
+              style={{ width: 419, height: 414 }}
               cover={
                 <img
                   className={styles.imgCard}
                   alt="example"
-                  src="/images/undraw_optimize_image_yp8f.svg"
+                  src="/images/undraw_asset_selection_ix3v.svg"
                 />
               }
             >
@@ -78,18 +76,15 @@ function LandingPage() {
                 </p>
               </div>
             </Card>
-          </div>
-        </Col>
-        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-          <div className={styles.cards}>
             <Card
+              className={styles.insideCard}
               hoverable
-              style={{ width: 320, height: 320 }}
+              style={{ width: 419, height: 414 }}
               cover={
                 <img
                   className={styles.imgCard}
                   alt="example"
-                  src="/images/undraw_fashion_photoshoot_mtq8.svg"
+                  src="/images/undraw_fashion_photoshoot_mtq8 (1).svg"
                 />
               }
             >
@@ -114,13 +109,32 @@ function LandingPage() {
               />
             </div>
             <div>
-              <h3 className={styles.contentStyle}>2</h3>
+            <img
+                className={styles.fit}
+                alt="example"
+                src="/images/beauty-galina-trush-04.jpg"
+              />
             </div>
             <div>
-              <h3 className={styles.contentStyle}>3</h3>
+            <img
+                className={styles.fit}
+                alt="example"
+                src="/images/beauty-galina-trush-04.jpg"
+              />
             </div>
             <div>
-              <h3 className={styles.contentStyle}>4</h3>
+            <img
+                className={styles.fit}
+                alt="example"
+                src="/images/beauty-galina-trush-04.jpg"
+              />
+            </div>
+            <div>
+            <img
+                className={styles.fit}
+                alt="example"
+                src="/images/beauty-galina-trush-04.jpg"
+              />
             </div>
           </Carousel>
         </Col>

@@ -13,7 +13,7 @@ function Navbar() {
       <Col xs={9} sm={9} md={9} lg={9} xl={9}>
         <div className={styles.right}>
           <Button className={styles.txt} type="link">
-            INICIA SESION
+            INICIAR SESION
           </Button>
           <Button className={styles.btn} type="primary">
             REGISTRATE
