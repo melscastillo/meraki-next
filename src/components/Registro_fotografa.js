@@ -46,7 +46,7 @@ const RegistroFotografa = () => {
 
   console.log(selectedCategories);
   return (
-    <Row className={styles.typography}>
+    <Row>
       <Col md ={16} sm = {24}>
         <Row>
           <Col offset={6} md ={12} sm = {24}>

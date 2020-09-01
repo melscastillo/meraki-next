@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 function LandingPage() {
   return (
     <>
-      <Row className= {styles.typography}>
+      <Row>
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <Navbar />
         </Col>
@@ -31,7 +31,7 @@ function LandingPage() {
           </div>
         </Col>
       </Row>
-      <Row className= {styles.typography}>
+      <Row>
         <Col xs={24} sm={24} md={8} lg={8} xl={8}>
           <div className={styles.cards}>
             <Card
