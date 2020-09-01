@@ -18,6 +18,8 @@ const RegistroFotografa = () => {
   ];
 
   const onChange = (checkedValues) => {
+    console.log (checkedValues, "test")
+    
     if (checkedValues.length >= 3) {
       const options = checkedValues.slice(0, 3);
       setSelectedCategories(options);
@@ -45,9 +47,9 @@ const RegistroFotografa = () => {
   console.log(selectedCategories);
   return (
     <Row className={styles.typography}>
-      <Col span={16}>
+      <Col md ={16} sm = {24}>
         <Row>
-          <Col offset={6} span={12}>
+          <Col offset={6} md ={12} sm = {24}>
             <h1 className={styles.logo}>MERAKI</h1>
             <p className={styles.title}>¿Ya tienes una cuenta?</p>
             <p className={styles.iniciaSesion}>
@@ -73,6 +75,7 @@ const RegistroFotografa = () => {
               >
                 <Input placeholder="" type="password" />
               </Form.Item>
+
               <Form.Item
                 className={styles.formItem}
                 label="¿En qué categoría de fotografía te especializas? (Puedes elegir hasta tres categorías distintas)"
@@ -100,41 +103,41 @@ const RegistroFotografa = () => {
                 <Input placeholder="" type="url" />
               </Form.Item>
 
-              <p> Compartenos tu sitio web y redes sociales</p>
+              <p className = {styles.textLabel}> Compartenos tu sitio web y redes sociales</p>
               <Form.Item
-                className={cx(styles.formItem)}
+                className={cx(styles.formItem, styles.socialInput)}
                 name="website"
-                label={<img width="24" src="/images/Icons/sphere.svg" />}
               >
+                <img width="24" src="/images/Icons/sphere.svg" />
                 <Input placeholder="" type="url" />
               </Form.Item>
 
               <Form.Item
-                className={styles.formItem}
+                className={cx (styles.formItem, styles.socialInput)}
                 name="facebook"
-                label={<img width="24" src="/images/Icons/facebook.svg" />}
               >
+                <img width="24" src="/images/Icons/facebook.svg" />
                 <Input placeholder="" type="url" />
               </Form.Item>
 
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="instagram"
-                label={<img width="24" src="/images/Icons/instagram.svg" />}
               >
+                <img width="24" src="/images/Icons/instagram.svg" />
                 <Input type="url" />
               </Form.Item>
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="linkedin"
-                label={<img width="24" src="/images/Icons/linkedin.svg" />}
               >
+                <img width="24" src="/images/Icons/linkedin.svg" />
                 <Input type="url" />
               </Form.Item>
-              <p>
+              <p className = {styles.textLabel}>
                 Elige las 6 mejores fotografías que mejor definan tu trabajo
               </p>
-              <ul>
+              <ul className = {styles.submitPhotos}>
                 <li> Formato .JPG</li>
                 <li> Máximo 5mp</li>
                 <li>
@@ -161,31 +164,23 @@ const RegistroFotografa = () => {
                   AGREGAR ARCHIVOS
                 </Button>
               </Upload>
-              <p>
+              <p className = {styles.textLabel}>
                 Antes de unirte te invitamos a leer y aceptar nuestros{" "}
                 <a>TÉRMINOS Y CONDICIONES</a>
               </p>
-              <p>
+              <p className = {styles.submitPhotos}>
                 <Checkbox /> He leído y acepto TÉRMINOS Y CONDICIONES
               </p>
               <div>
                 <Button className={styles.submit}>REGISTRARSE</Button>
               </div>
-              <Form.Item>
-                <Button
-                  className={styles.inputs}
-                  type="primary"
-                  htmlType="submit"
-                >
-                  Submit
-                </Button>
-              </Form.Item>
+              
             </Form>
           </Col>
         </Row>
       </Col>
 
-      <Col className={styles.aside} span={8}>
+      <Col className={styles.aside} md={8}>
         <p>
           Únete a Meraki para conocer ofertas laborales y promocionar tu trabajo
           con clientes de todo el país
