@@ -15,7 +15,9 @@
     "next": "^9.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropzone": "^11.0.3",
     "reqwest": "^2.0.5",
+    "superagent": "^6.1.0",
     "xhr2": "^0.2.0"
   }
 }

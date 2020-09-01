@@ -4,6 +4,7 @@ import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
 import styles from "./RegistroFotografa.module.css";
 
 import { signUpPhotographers } from "../../server";
+import App from "../../components/DropZone";
 
 const RegistroFotografa = () => {
   const [form] = Form.useForm();
@@ -43,6 +44,7 @@ const RegistroFotografa = () => {
   };
 
   console.log(selectedCategories);
+
   return (
     <Row className={styles.typography}>
       <Col span={16}>
@@ -142,25 +144,10 @@ const RegistroFotografa = () => {
                   Podrás modificarlas cuando lo desees.
                 </li>
               </ul>
-              <Upload
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                listType="picture"
-              >
-                <Button className={styles.uploadButton}>
-                  <svg
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 512 512"
-                  >
-                    <title></title>
-                    <g id="icomoon-ignore"></g>
-                    <path d="M224 288h64v-128h96l-128-128-128 128h96zM320 216v49.356l146.533 54.644-210.533 78.509-210.533-78.509 146.533-54.644v-49.356l-192 72v128l256 96 256-96v-128z"></path>
-                  </svg>
-                  AGREGAR ARCHIVOS
-                </Button>
-              </Upload>
+
+              <div>
+                <App />
+              </div>
               <p>
                 Antes de unirte te invitamos a leer y aceptar nuestros{" "}
                 <a>TÉRMINOS Y CONDICIONES</a>
@@ -169,7 +156,13 @@ const RegistroFotografa = () => {
                 <Checkbox /> He leído y acepto TÉRMINOS Y CONDICIONES
               </p>
               <div>
-                <Button className={styles.submit}>REGISTRARSE</Button>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className={styles.submit}
+                >
+                  REGISTRARSE
+                </Button>
               </div>
               <Form.Item>
                 <Button
