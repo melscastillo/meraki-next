@@ -1,9 +1,9 @@
 import { useState } from "react";
 import cx from "classnames";
 import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
-import styles from "./RegistroFotografa.module.css";
+import styles from "../../styles/RegistroFotografa.module.css";
 
-import { signUpPhotographers, addPhotos } from "../../server";
+import { signUpPhotographers, addPhotos } from "../server";
 import Droppi from "../components/Dropzone";
 
 const RegistroFotografa = () => {
