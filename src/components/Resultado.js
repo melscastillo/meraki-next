@@ -1,5 +1,5 @@
 import {Card, Col} from "antd";
-import styles from "../../styles/Busqueda.module.css";
+import styles from "../../styles/Resultado.module.css";
 
 const Resultado = ({name,image}) =>{
     return (
