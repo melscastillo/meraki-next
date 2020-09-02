@@ -36,8 +36,8 @@
   
 }
 .h2 {
-  color: rgba(43, 45, 66, 1);
-  font-size: 2.4rem;
+  color: #2b2d42;
+  font-size: 50px;
   text-shadow: 2px 4px 2px lightgray;
   margin-bottom: 80px;
   font-weight: 700;
@@ -80,8 +80,124 @@
   object-fit: cover;
   object-position: center center;
   width: 100%;
-  height: 900px;
+  height: 980px;
+ 
 }
+
+/*.textCarrusel{
+  font-size: 120px;
+  color:#fff;
+  font-weight: 900;
+  margin-top: -300px;
+
+}*/
+
+.textCases {
+  font-size: 50px;
+  font-weight: 700;
+  text-shadow: 2px 4px 2px lightgray;
+  color: #2b2d42;
+  margin-left: 750px;
+  margin-top: 100px;
+}
+
+.cardCase{
+  width: 1500px;
+  height: 550px;
+  background-color: #2b2d42;
+  border-radius: 35px;
+  margin-left: 200px;
+  margin-top: 50px;
+
+  
+}
+.cardCase > div:first-of-type{
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgCardCase{
+  width: 450px;
+  height: 450px;
+  border-radius: 35px;
+  margin-left: -100px;
+  margin-top: 25px;
+  
+}
+
+.textCardCase{
+  width: 500px;
+  margin-top: 35px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.textCardCase2{
+  width: 500px;
+  margin-top: 35px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: right;
+}
+
+
+.nameCardCase{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.nameCardCase2{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.nameCardCase_{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: -30px;
+}
+
+.downCard{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer{
+  background-color: #2b2d42;
+  color: #fff;
+  padding: 50px 100px;
+  margin-top: 90px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.linksContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+
+}
+
+.ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ul li{
+  display: inline-block;
+  margin: 0 35px;
+  font-size: 20px;
+
+}
+
 
 @media screen and (max-width: 600px) {
   .h2 {
