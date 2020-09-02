@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 10px 40px;
 }
 
 .meraki {
@@ -66,6 +66,7 @@
 }
 .insideCard {
   text-align: center;
+  box-shadow: 5px 5px 5px #dddddd;
 }
 
 .imgCard {
@@ -91,4 +92,45 @@
 .stars {
   width: 100%;
   text-align: center;
+}
+
+.bnt_wrapper {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 15px;
+}
+
+.button {
+  border-radius: 10px;
+  background: #9bbfb8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 20px;
+  height: 60px;
+  box-shadow: 5px 5px 5px #dddddd;
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px 20px;
+  width: 300px;
+}
+.button:focus,
+.button:hover {
+  outline: none;
+  border: 1px solid #9bbfb8;
+  box-shadow: 5px 5px 5px #dddddd;
+  color: #9bbfb8;
+}
+.icon {
+  fill: white;
+  margin-left: 10px;
+}
+
+.button:focus .icon,
+.button:hover .icon {
+  fill: #9bbfb8;
 }

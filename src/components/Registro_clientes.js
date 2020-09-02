@@ -237,25 +237,6 @@ function ClientsRegister() {
                   />
                 </Form.Item>
 
-                <Form.Item
-                  className={styles.form_item}
-                  name={"Foto de perfil"}
-                  label="Foto de perfil"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Por favor, sube una foto de perfil",
-                    },
-                  ]}
-                >
-                  <Input
-                    value={profilepicture}
-                    name="profilepicture"
-                    className={styles.photo}
-                    onChange={handlerInput}
-                  />
-                </Form.Item>
-
                 <Form.Item className={styles.button_wrapper}>
                   <Button className={styles.button_submit} htmlType="submit">
                     Registrarse
