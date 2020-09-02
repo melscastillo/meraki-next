@@ -1,27 +1,11 @@
-import React, { useEffect, useState } from "react";
+/* import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
-const dragContainer = {
-  flex: 1,
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  padding: "20px",
-  borderWidth: "2px",
-  borderRadius: "2px",
-  borderColor: "#eeeeee",
-  borderStyle: "dashed",
-  backgroundColor: "#fafafa",
-  color: "#bdbdbd",
-  outline: "none",
-  transition: "border .24s ease-in-out",
-};
 const thumbsContainer = {
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
   marginTop: 16,
-  marginBottom: "4rem",
 };
 
 const thumb = {
@@ -49,10 +33,10 @@ const img = {
 };
 
 function Previews(props) {
-  console.log("props", props);
   const [files, setFiles] = useState([]);
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
+    multiple: true,
     onDrop: (acceptedFiles) => {
       setFiles(
         acceptedFiles.map((file) =>
@@ -61,8 +45,7 @@ function Previews(props) {
           })
         )
       );
-      // send imaages to S3
-      console.log("send images to s3", acceptedFiles);
+      //Peticion
     },
   });
 
@@ -84,13 +67,85 @@ function Previews(props) {
 
   return (
     <section className="container">
-      <div {...getRootProps({ className: "dropzone" })} style={dragContainer}>
+      <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
-        <p>Arrastra tus fotos aqui, o has click para seleccionar archivos</p>
+        <p>Drag 'n' drop some files here, or click to select files</p>
       </div>
       <aside style={thumbsContainer}>{thumbs}</aside>
     </section>
   );
 }
 
-export default Previews;
+export default Previews; */
+
+import React from "react";
+import ReactDOM from "react-dom";
+import ImageUploading from "react-images-uploading";
+
+// import "./styles.css";
+
+function App({ callback }) {
+  const [photos, setPhotos] = React.useState([]);
+  const maxNumber = 7;
+  const onChange = (imageList, addUpdateIndex) => {
+    // data for submit
+    console.log(imageList);
+    setPhotos(imageList);
+    const img1 = imageList[0].file;
+    const img2 = imageList[1].file;
+    const img3 = imageList[2].file;
+    const img4 = imageList[3].file;
+    const img5 = imageList[4].file;
+    const img6 = imageList[5].file;
+    const img7 = imageList[6].file;
+    const imagesUrl = [img1, img2, img3, img4, img5, img6, img7];
+    callback(imagesUrl);
+    console.log(imagesUrl);
+  };
+
+  return (
+    <div className="App">
+      <ImageUploading
+        multiple
+        value={photos}
+        onChange={onChange}
+        maxNumber={maxNumber}
+        dataURLKey="data_url"
+      >
+        {({
+          imageList,
+          onImageUpload,
+          onImageRemoveAll,
+          onImageUpdate,
+          onImageRemove,
+          isDragging,
+          dragProps,
+        }) => (
+          // write your building UI
+          <div className="upload__image-wrapper">
+            <button
+              style={isDragging ? { color: "red" } : null}
+              onClick={onImageUpload}
+              {...dragProps}
+            >
+              Click or Drop here
+            </button>
+            &nbsp;
+            <button onClick={onImageRemoveAll}>Remove all images</button>
+            {imageList.map((image, index) => (
+              <div key={index} className="image-item">
+                <img src={image.data_url} alt="" width="100" />
+                <div className="image-item__btn-wrapper">
+                  <button onClick={() => onImageUpdate(index)}>Update</button>
+                  <button onClick={() => onImageRemove(index)}>Remove</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </ImageUploading>
+    </div>
+  );
+}
+
+export default App;

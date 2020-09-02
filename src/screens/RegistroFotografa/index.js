@@ -3,8 +3,8 @@ import cx from "classnames";
 import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
 import styles from "./RegistroFotografa.module.css";
 
-import { signUpPhotographers } from "../../server";
-import Previews from "../../components/DropZone";
+import { signUpPhotographers, addPhotos } from "../../server";
+import App from "../../components/DropZone";
 
 const RegistroFotografa = () => {
   const [form] = Form.useForm();
@@ -17,6 +17,11 @@ const RegistroFotografa = () => {
     "Fotografía de Moda",
     "Fotografía Documental o Fotoperiodismo",
   ];
+  const [list, setlist] = useState([]);
+
+  const setimagelist = (listimage) => {
+    setlist(listimage);
+  };
 
   const onChange = (checkedValues) => {
     if (checkedValues.length >= 3) {
@@ -37,6 +42,23 @@ const RegistroFotografa = () => {
         return;
       }
       console.log("response", response.data);
+      const id = response.data.photograper._id;
+      try {
+        console.log(list);
+        const formData = new FormData();
+        for (let photo in list) {
+          formData.append("photos", list[photo]);
+        }
+        console.log(formData);
+        const responseImg = await addPhotos(id, formData);
+        if (!responseImg.success) {
+          console.log("Error: ", responseImg.error);
+          return;
+        }
+        console.log("response", responseImg.data);
+      } catch (error) {
+        console.log("error image", error);
+      }
       form.resetFields();
     } catch (error) {
       console.log("error", error);
@@ -146,8 +168,9 @@ const RegistroFotografa = () => {
               </ul>
 
               <div>
-                <Previews />
+                <App callback={setimagelist} />
               </div>
+
               <p>
                 Antes de unirte te invitamos a leer y aceptar nuestros{" "}
                 <a>TÉRMINOS Y CONDICIONES</a>
