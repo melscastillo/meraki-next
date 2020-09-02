@@ -1,8 +1,18 @@
 import styles from "../../styles/clientsRegister.module.css";
 import React, { useState } from "react";
-import { Row, Col, Form, Input, InputNumber, Button } from "antd";
+import {
+  Row,
+  Col,
+  Form,
+  Input,
+  InputNumber,
+  Button,
+  Sider,
+  Content,
+} from "antd";
 
 import { signUp } from "../server";
+import Password from "antd/lib/input/Password";
 
 function ClientsRegister() {
   const [form] = Form.useForm();
@@ -76,26 +86,29 @@ function ClientsRegister() {
   return (
     <>
       <Row>
-        <Col className={styles.background} xs={24} sm={6} md={6} lg={6} xl={6}>
-          <div>
-            <h2>MERAKI </h2>
-          </div>
-          <div className={styles.center}>
-            <h2 className={styles.h2}>
-              Únete a Meraki para publicar tus ofertas laborales y trabaja con
-              fotógrafas de todo el país
-            </h2>
+        <Col xs={24} sm={6} md={6} lg={8} xl={8}>
+          <div className={styles.background}>
+            <div>
+              <h2 className={styles.meraki}>MERAKI </h2>
+            </div>
+            <div className={styles.center}>
+              <h2 className={styles.h2}>
+                Únete a Meraki para publicar tus ofertas laborales y trabaja con
+                fotógrafas de todo el país
+              </h2>
+            </div>
           </div>
         </Col>
+
         <Col
           className={styles.divRight}
           xs={24}
           sm={18}
           md={18}
-          lg={18}
-          xl={18}
+          lg={16}
+          xl={16}
         >
-          <div>
+          <div className={styles.form_wrapper}>
             <div>
               <h2 className={styles.text}>¿Ya tienes una cuenta?</h2>
               <h2 className={styles.textPers}>Inicia Sesion</h2>
@@ -109,11 +122,13 @@ function ClientsRegister() {
                 validateMessages={validateMessages}
               >
                 <Form.Item
-                  name={"name"}
-                  label="Name"
+                  className={styles.form_item}
+                  name={"Nombre"}
+                  label="Nombre"
                   rules={[
                     {
                       required: true,
+                      message: "Por favor, ingresa tu nombre",
                     },
                   ]}
                 >
@@ -126,11 +141,13 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={"lastName"}
-                  label="Last name"
+                  className={styles.form_item}
+                  name={"Apellido"}
+                  label="Apellido"
                   rules={[
                     {
                       required: true,
+                      message: "Por favor, ingresa tu apellido",
                     },
                   ]}
                 >
@@ -143,12 +160,14 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={"email"}
-                  label="Email"
+                  className={styles.form_item}
+                  name={"Correo electrónico"}
+                  label="Correo electrónico"
                   rules={[
                     {
                       type: "email",
                       required: true,
+                      message: "Por favor, ingresa tu correo electrónico",
                     },
                   ]}
                 >
@@ -161,16 +180,18 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  label="Password"
-                  name={"password"}
+                  className={styles.form_item}
+                  label="Contraseña"
+                  name={"Contraseña"}
                   rules={[
                     {
                       required: true,
-                      message: "Please input your password!",
+                      message: "Por favor, ingresa tu contraseña",
                     },
                   ]}
                 >
-                  <Input.Password
+                  <Input
+                    type="password"
                     value={password}
                     name="password"
                     className={styles.inputs}
@@ -179,12 +200,13 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  label="phone"
-                  name={"phone"}
+                  className={styles.form_item}
+                  label="Teléfono"
+                  name={"Teléfono"}
                   rules={[
                     {
                       required: true,
-                      message: "Please input your phone number!",
+                      message: "Por favor, ingresa tu número telefónico",
                     },
                   ]}
                 >
@@ -197,12 +219,13 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={"adress"}
-                  label="Address"
+                  className={styles.form_item}
+                  name={"Dirección"}
+                  label="Dirección"
                   rules={[
                     {
                       required: true,
-                      message: "Please input address!",
+                      message: "Por favor, ingresa tu dirección",
                     },
                   ]}
                 >
@@ -215,30 +238,27 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item
-                  name={"profilepicture"}
-                  label="Prueba de foto de perfil"
+                  className={styles.form_item}
+                  name={"Foto de perfil"}
+                  label="Foto de perfil"
                   rules={[
                     {
                       required: true,
-                      message: "Please input your phone number!",
+                      message: "Por favor, sube una foto de perfil",
                     },
                   ]}
                 >
                   <Input
                     value={profilepicture}
                     name="profilepicture"
-                    className={styles.inputs}
+                    className={styles.photo}
                     onChange={handlerInput}
                   />
                 </Form.Item>
 
-                <Form.Item>
-                  <Button
-                    className={styles.inputs}
-                    type="primary"
-                    htmlType="submit"
-                  >
-                    Submit
+                <Form.Item className={styles.button_wrapper}>
+                  <Button className={styles.button_submit} htmlType="submit">
+                    Registrarse
                   </Button>
                 </Form.Item>
               </Form>

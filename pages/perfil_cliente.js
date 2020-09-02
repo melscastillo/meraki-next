@@ -39,6 +39,11 @@ function PerfilCliente() {
               </List>
               <List className={styles.item}>
                 <a Mis Ofertas>
+                  {"Mis Mensajes"}
+                </a>
+              </List>
+              <List className={styles.item}>
+                <a Mis Ofertas>
                   {"Mis Ofertas "}
                 </a>
               </List>
@@ -51,16 +56,14 @@ function PerfilCliente() {
               <Card
                 className={styles.insideCard}
                 hoverable
-                style={{ width: 419, height: 414 }}
-                cover={
-                  <img
-                    className={styles.imgCard}
-                    alt="example"
-                    src="/images/undraw_social_ideas_e8rj.svg"
-                  />
-                }
+                style={{ width: 380, height: 400 }}
               >
                 <h3 className={styles.pTittle}> Hasta el momento tienes: </h3>
+                <img
+                  className={styles.imgCard}
+                  alt="example"
+                  src="/images/create1.png"
+                />
                 <div>
                   <p className={styles.pText}>
                     10 ofertas laborales publicadas
@@ -72,20 +75,26 @@ function PerfilCliente() {
               </Card>
 
               <Card
-                className={styles.insideCard}
                 hoverable
-                style={{ width: 419, height: 414 }}
-                cover={
-                  <img
-                    className={styles.imgCard}
-                    alt="example"
-                    src="/images/undraw_reviews_lp8w.svg"
-                  />
-                }
+                style={{ width: 380, height: 400 }}
+                className={styles.insideCard}
               >
                 <h3 className={styles.pTittle}>Calificación de </h3>
+                <img
+                  className={styles.imgCard}
+                  alt="example"
+                  src="/images/undraw_reviews_lp8w.svg"
+                />
+
                 <div>
                   <p className={styles.pText}>5 Estrellas</p>
+                  <div className={styles.stars}>
+                    <img src="/images/vector.png" />
+                    <img src="/images/vector.png" />
+                    <img src="/images/vector.png" />
+                    <img src="/images/vector.png" />
+                    <img src="/images/vector.png" />
+                  </div>
                 </div>
               </Card>
             </div>
