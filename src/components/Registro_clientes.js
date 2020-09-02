@@ -239,7 +239,7 @@ function ClientsRegister() {
 
                 <Form.Item className={styles.button_wrapper}>
                   <Button className={styles.button_submit} htmlType="submit">
-                    Registrarse
+                    REGISTRARSE
                   </Button>
                 </Form.Item>
               </Form>

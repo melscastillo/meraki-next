@@ -62,16 +62,52 @@ const RegistroFotografa = () => {
                 className={styles.formItem}
                 label="Nombre"
                 name="name"
+                rules = {[
+                  {
+                    required: true,
+                    message: "Por favor, ingresa tu nombre"
+                  }
+                ]}
               >
                 <Input placeholder="" />
               </Form.Item>
-              <Form.Item className={styles.formItem} label="Email" name="email">
+              <Form.Item
+                form={form}
+                className={styles.formItem}
+                label="Apellido"
+                name="apellido"
+                rules = {[
+                  {
+                    required: true,
+                    message: "Por favor, ingresa tu apellido"
+                  }
+                ]}
+              >
+                <Input placeholder="" />
+              </Form.Item>
+              <Form.Item className={styles.formItem} 
+              label="Email" 
+              name="email"
+              rules={[
+                {
+                  type: "email",
+                  required: true,
+                  message: "Por favor, ingresa tu correo electrónico",
+                },
+              ]}
+              >
                 <Input placeholder="" type="email" />
               </Form.Item>
               <Form.Item
                 className={styles.formItem}
                 label="Contraseña"
                 name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Por favor, ingresa tu contraseña",
+                  },
+                ]}
               >
                 <Input placeholder="" type="password" />
               </Form.Item>
@@ -166,7 +202,7 @@ const RegistroFotografa = () => {
               </Upload>
               <p className = {styles.textLabel}>
                 Antes de unirte te invitamos a leer y aceptar nuestros{" "}
-                <a>TÉRMINOS Y CONDICIONES</a>
+                <a className = {styles.terminos}>TÉRMINOS Y CONDICIONES</a>
               </p>
               <p className = {styles.submitPhotos}>
                 <Checkbox /> He leído y acepto TÉRMINOS Y CONDICIONES

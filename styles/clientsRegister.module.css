@@ -105,7 +105,7 @@
   font-size: 20px;
   height: 60px;
   box-shadow: 5px 5px 5px #dddddd;
-  margin: auto;
+  margin: 15 auto;
 }
 .button_submit:focus,
 .button_submit:hover {
