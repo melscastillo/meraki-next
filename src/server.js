@@ -1,3 +1,5 @@
+import request from "superagent";
+
 const URL_BASE = " http://localhost:8080/";
 
 const getClients = async () => {
@@ -33,6 +35,20 @@ const signUpPhotographers = async (request) => {
   const posts = await response.json();
   return posts;
 };
+
+//Agregar fotografas
+const addPhotos = async (id, data) => {
+  const response = await fetch(`${URL_BASE}photographers/${id}/upload`, {
+    method: "POST",
+    body: data,
+    /*    headers: {
+      "Content-Type": "multipart/form-data",
+    }, */
+  });
+  const posts = await response.json();
+  return posts;
+};
+
 //inicio de sesion clientes
 const loginClients = async (request) => {
   const response = await fetch(`${URL_BASE}authClients/sign-in`, {
@@ -65,4 +81,5 @@ export {
   signUpPhotographers,
   loginClients,
   loginPhotographers,
+  addPhotos,
 };
