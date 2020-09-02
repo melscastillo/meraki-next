@@ -7,7 +7,7 @@ function PerfilCliente() {
   return (
     <container>
       <Layout className={styles.layout}>
-        <Row className={styles.center}>
+        <Row>
           <Col
             className={styles.nav_wrapper}
             xs={24}

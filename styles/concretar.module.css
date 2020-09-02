@@ -1,0 +1,75 @@
+.layout {
+  min-height: 100vh;
+}
+
+.nav_wrapper {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.meraki {
+  font-size: 35px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.content {
+  background: white;
+}
+
+.title {
+  color: rgba(43, 45, 66, 1);
+  font-size: 28px;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 2px 4px 2px lightgray;
+  margin-top: 100px;
+}
+
+.title2 {
+  color: rgba(43, 45, 66, 1);
+  font-size: 28px;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 2px 4px 2px lightgray;
+  margin-top: 50px;
+}
+
+.descargar {
+  color: #df928e;
+}
+.descargar:hover {
+  color: #9bbfb8;
+}
+
+.button_wrapper {
+  margin-top: 65px;
+}
+
+.button {
+  border-radius: 10px;
+  background: #9bbfb8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 20px;
+  height: 60px;
+  box-shadow: 5px 5px 5px #dddddd;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px 20px;
+  width: 300px;
+}
+.button:focus,
+.button:hover {
+  outline: none;
+  border: 1px solid #9bbfb8;
+  box-shadow: 5px 5px 5px #dddddd;
+  color: #9bbfb8;
+}
