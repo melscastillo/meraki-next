@@ -1,0 +1,22 @@
+.ant-modal .ant-modal-content {
+}
+
+.modales label {
+  border-radius: 10px;
+  background: black;
+  font: bold;
+}
+
+.button {
+  background: #df928e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.button:hover {
+  background: white;
+  color: #df928e;
+  border: #df928e;
+}

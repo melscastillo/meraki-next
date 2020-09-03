@@ -1,6 +1,7 @@
 import { useState } from "react";
 import cx from "classnames";
 import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
+import Modales from "../components/modal";
 import styles from "../../styles/RegistroFotografa.module.css";
 
 import { signUpPhotographers, addPhotos } from "../server";
@@ -18,6 +19,7 @@ const RegistroFotografa = () => {
     "Fotografía Documental o Fotoperiodismo",
   ];
   const [list, setlist] = useState([]);
+  const [visible, setVisible] = useState(false);
 
   const setimagelist = (listimage) => {
     setlist(listimage);
@@ -64,8 +66,16 @@ const RegistroFotografa = () => {
       console.log("error", error);
     }
   };
-
   console.log(selectedCategories);
+
+  const handleModalButton = () => {
+    setVisible(true);
+  };
+
+  const handleModalAccept = () => {
+    setVisible(false);
+  };
+
   return (
     <Row>
       <Col md={16} sm={24}>
@@ -221,10 +231,17 @@ const RegistroFotografa = () => {
                   type="primary"
                   htmlType="submit"
                   className={styles.submit}
+                  onClick={handleModalButton}
                 >
                   REGISTRARSE
                 </Button>
               </div>
+              <Modales
+                visible={visible}
+                onOk={handleModalButton}
+                title="Gracias por registrarte"
+                text="Te enviamos un correo de confirmación"
+              ></Modales>
             </Form>
           </Col>
         </Row>

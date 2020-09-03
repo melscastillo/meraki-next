@@ -1,15 +1,7 @@
 import styles from "../../styles/clientsRegister.module.css";
+import Modales from "../components/modal";
 import React, { useState } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  Input,
-  InputNumber,
-  Button,
-  Sider,
-  Content,
-} from "antd";
+import { Row, Col, Form, Input, Button } from "antd";
 
 import { signUp } from "../server";
 import Password from "antd/lib/input/Password";
@@ -23,6 +15,7 @@ function ClientsRegister() {
   const [phone, setphone] = useState(0);
   const [adress, setadress] = useState("");
   const [profilepicture, setprofilepicture] = useState("");
+  const [visible, setVisible] = useState(false);
 
   const handlerInput = ({ target: { value, name } }) => {
     handleInputChange(name, value);
@@ -51,6 +44,14 @@ function ClientsRegister() {
       setprofilepicture(value);
       console.log("Profilepic:", profilepicture);
     }
+  };
+
+  const handleModalButton = () => {
+    setVisible(true);
+  };
+
+  const handleModalAccept = () => {
+    setVisible(false);
   };
 
   const onFinish = async (value) => {
@@ -238,7 +239,11 @@ function ClientsRegister() {
                 </Form.Item>
 
                 <Form.Item className={styles.button_wrapper}>
-                  <Button className={styles.button_submit} htmlType="submit">
+                  <Button
+                    className={styles.button_submit}
+                    htmlType="button"
+                    onClick={handleModalButton}
+                  >
                     REGISTRARSE
                   </Button>
                 </Form.Item>
@@ -247,6 +252,12 @@ function ClientsRegister() {
           </div>
         </Col>
       </Row>
+      <Modales
+        visible={visible}
+        onOk={handleModalButton}
+        title="Gracias por registrarte"
+        text="Te enviamos un correo de confirmación"
+      ></Modales>
     </>
   );
 }
