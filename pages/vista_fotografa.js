@@ -1,12 +1,11 @@
 import Link from "next/link";
 import styles from "../styles/vista_fotografa.module.css";
 import { Row, Col, Button } from "antd";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-const Galeria = dynamic(
-  () => import('../src/components/Galeria'),
-  { ssr: false }
-)
+const Galeria = dynamic(() => import("../src/components/Galeria"), {
+  ssr: false,
+});
 
 const photos = [
   {
@@ -14,7 +13,7 @@ const photos = [
     width: 1350,
     height: 900,
   },
-  
+
   {
     src: "/images/photo-1548765015-1e047ff5c9e9.jpeg",
     width: 634,
@@ -40,7 +39,6 @@ const photos = [
     width: 1050,
     height: 700,
   },
-  
 ];
 
 const Vista = () => {
@@ -49,24 +47,24 @@ const Vista = () => {
       <Col offset={4} span={16}>
         <Row>
           <Col span={24}>
-            <p  className= {styles.regresar}>
-              <Link href="/busqueda" passHref>
-                <a> REGRESAR A RESULTADOS DE BÚSQUEDA</a>
+            <p className={styles.regresar}>
+              <Link href="/busqueda" passHref> 
+                  <a>REGRESAR A RESULTADOS DE BÚSQUEDA</a>
               </Link>
             </p>
           </Col>
         </Row>
         <Row>
-            <Col span={24}>
+          <Col span={24}>
+            <p>Nitzelli Villa</p>
             <p>
-                Nitzelli Villa
+              Fotógrafa con más de 4 años de experiencia en fotografías de
+              bodas. Me encargo de hacer de tu evento un día que recordarás para
+              toda la vida.
             </p>
-            <p>
-                Fotógrafa con más de 4 años de experiencia en fotografías de bodas. Me encargo de hacer de tu evento un día que recordarás para toda la vida.
-            </p>
-            </Col>
+          </Col>
         </Row>
-        
+
         <Row>
           <Col span={24}>
             <Galeria photos={photos} />
