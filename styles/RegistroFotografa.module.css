@@ -1,151 +1,194 @@
 .submit {
-    color: #fff;
-    background-color: #9bbfb8;
-    font-weight: bolder;
-    height: 60px;
-    width: 250px;
+  color: #fff;
+  background-color: #9bbfb8;
+  font-weight: bolder;
+  height: 60px;
+  width: 250px;
+  text-align: center;
+  margin-bottom: 95px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #ddd;
+}
+
+.submit:hover {
+  border: 2px solid #9bbfb8;
+  color: #9bbfb8;
+  background-color: #fff;
+}
+
+.button_submit {
+  width: 100%;
+  text-align: center;
+}
+
+.imageSidebar {
+  min-width: 450px;
+  max-width: 100%;
+  height: 1046px;
+}
+
+.logo {
+  color: #2b2d42;
+  font-size: 35px;
+  font-weight: 900;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.title {
+  color: #2b2d42;
+  font-size: 25px;
+  font-weight: 700;
+  text-shadow: 3px 2px 3px #ddd;
+  text-align: center;
+}
+
+.iniciaSesion {
+  color: #df928e;
+  font-size: 25px;
+  font-weight: 700;
+  text-shadow: 3px 2px 3px #ddd;
+  text-align: center;
+}
+
+.iniciaSesion:hover {
+  color: #9bbfb8;
+}
+
+.content_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.formItem label,
+.textLabel {
+  margin: 0 auto !important;
+  color: #2b2d42;
+  font-weight: 700;
+  font-size: 18px;
+  width: 100%;
+}
+
+.textLabelSocial {
+  margin-bottom: 1rem;
+  color: #2b2d42;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.terminos {
+  color: #df928e;
+}
+
+.terminos:hover {
+  color: #9bbfb8;
+}
+
+.submitPhotos {
+  margin: 0 auto !important;
+  color: #2b2d42;
+  font-weight: 700;
+  font-size: 15px;
+  width: 100%;
+}
+
+.formItem input,
+.formItem textarea {
+  background-color: #2b2d42;
+  border: 0px;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 15px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.uploadButton,
+.uploadButton:focus {
+  background-color: #df928e;
+  color: #fff;
+  height: 40px;
+  font-weight: 700;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #ddd;
+  margin-bottom: 50px;
+  margin-top: 70px;
+}
+
+.uploadButton:hover {
+  color: #df928e;
+  border: 1px solid #df928e;
+}
+
+.uploadButton:hover svg {
+  fill: #df928e;
+}
+
+.uploadButton svg {
+  margin-right: 10px;
+  fill: #fff;
+}
+
+.socialInput {
+  display: flex;
+  flex-direction: row !important;
+}
+
+.socialInput input {
+  width: 90%;
+  margin-left: 25px;
+}
+
+.socialInput:nth-of-type(1) {
+  margin-top: 2rem;
+}
+
+.aside {
+  background-image: url("/images/photo-1558234608-ae0b60563965.jpeg");
+  position: sticky;
+  background-repeat: no-repeat;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.aside p {
+  color: #fff;
+  font-weight: 900;
+  font-size: 45px;
+  line-height: 1.3em;
+  text-align: center;
+  width: 100%;
+  padding-left: 1rem;
+  padding: right 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 570px) {
+  .form_wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .logo {
     text-align: center;
-    margin-bottom: 95px;
-    margin-left: 150px;
-    margin-top:50px;
-    font-size: 20px;
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #ddd;
-} 
-
-.submit:hover{
-    border: 2px solid #9bbfb8;
-    color: #9bbfb8;
-    background-color: #fff;
-}
-
-
-.imageSidebar{
-    min-width: 450px;
-    max-width: 100%;
-    height: 1046px;
-
-}
-
-.logo{
-    color: #2b2d42;
-    font-size: 35px;
-    font-weight: 900;
-    margin-top:25px;
-}
-
-.title{
-    color: #2b2d42;
-    font-size: 25px;
-    font-weight: 700;
-    text-shadow: 3px 2px 3px #ddd; 
-    text-align: center;
-    
-}
-
-.iniciaSesion{
-    color: #df928e;
-    font-size: 25px;
-    font-weight: 700;
-    text-shadow: 3px 2px 3px #ddd; 
-    text-align: center;
-}
-
-.iniciaSesion:hover{
-    color: #9bbfb8;
-}
-
-
-.formItem label, .textLabel{
-    margin: 0 auto !important;
-    color:#2b2d42;
-    font-weight: 700;
-    font-size: 18px;
-    width: 100%;
-}
-
-.terminos{
-    color: #df928e;
-}
-
-.terminos:hover{
-    color: #9bbfb8;
-}
-
-.submitPhotos{
-    margin: 0 auto !important;
-    color:#2b2d42;
-    font-weight: 700;
-    font-size: 15px;
-    width: 100%;
-}
-
-
-.formItem input, .formItem textarea{
-    background-color: #2b2d42; 
-    border: 0px;
-    border-radius: 10px;
-    height: 50px;
-    font-size: 15px;
-    margin-top:2px;
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-.uploadButton, .uploadButton:focus {
-    background-color: #df928e;
-    color: #fff;
-    height: 40px;
-    font-weight: 700;
-    border: 0px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #ddd;
-    margin-bottom: 50px;
-    margin-top: 70px;
-}
-
-.uploadButton:hover{
-    color: #df928e;
-    border: 1px solid #df928e;
-}
-
-.uploadButton:hover svg{
-    fill: #df928e;
-}
-
-.uploadButton svg{
-    margin-right: 10px;
-    fill: #fff;
-} 
-
-.socialInput{
-    display: flex;
-    justify-content: space-between;
-}
-
-.socialInput input{
-    width: 90%;
-    margin-left: 25px;
-}
-
-.aside{
-    
-    background-image: url("/images/photo-1558234608-ae0b60563965.jpeg");
-    position: sticky;
-    background-repeat: no-repeat;
-    top: 0;
-    height: 100vh;
-}
-
-.aside p{
-    position: absolute;
-    top: 200px;
-    left: 100px;
-    color: #fff;
-    font-weight: 900;
-    font-size: 45px;
-    text-align: center;
-    width: 450px;
-    text-shadow: 1px 1px 2px #ddd
+    margin-left: 0;
+  }
+  .aside {
+    display: none;
+  }
+  .socialInput label {
+    width: auto;
+  }
+  .socialInput input {
+    margin-left: 0;
+  }
 }

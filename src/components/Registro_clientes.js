@@ -85,10 +85,10 @@ function ClientsRegister() {
   return (
     <>
       <Row>
-        <Col xs={24} sm={6} md={6} lg={8} xl={8}>
+        <Col xs={0} sm={6} md={6} lg={8} xl={8}>
           <div className={styles.background}>
             <div>
-              <h2 className={styles.meraki}>MERAKI </h2>
+              <h1 className={styles.meraki}>MERAKI </h1>
             </div>
             <div className={styles.center}>
               <h2 className={styles.h2}>
@@ -98,11 +98,15 @@ function ClientsRegister() {
             </div>
           </div>
         </Col>
-
+        <Col xs={24} sm={0} md={0} lg={0} xl={0}>
+          <div>
+            <h1 className={styles.meraki_mobile}>MERAKI </h1>
+          </div>
+        </Col>
         <Col
           className={styles.divRight}
           xs={24}
-          sm={18}
+          sm={24}
           md={18}
           lg={16}
           xl={16}
@@ -116,7 +120,7 @@ function ClientsRegister() {
                 </Link>
               </h2>
             </div>
-            <div>
+            <div className={styles.wrapp_form}>
               <Form
                 form={form}
                 layout="vertical"

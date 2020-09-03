@@ -1,7 +1,7 @@
 //CSS
 import styles from "../../styles/Navbar.module.css";
 import { Button, Row, Col } from "antd";
-import Link from 'next/link';
+import Link from "next/link";
 
 function Navbar() {
   return (
@@ -13,15 +13,11 @@ function Navbar() {
       </Col>
       <Col xs={9} sm={9} md={9} lg={9} xl={9}>
         <div className={styles.right}>
-        <Link href="/login">
-          <Button className={styles.txt} type="link">
-            INICIAR SESION
-          </Button>
+          <Link href="/login">
+            <Button className={styles.txt}>INICIAR SESION</Button>
           </Link>
           <Link href="/registrate_como">
-          <Button className={styles.btn} type="primary">
-            REGISTRATE
-          </Button>
+            <Button className={styles.btn}>REGISTRATE</Button>
           </Link>
         </div>
       </Col>

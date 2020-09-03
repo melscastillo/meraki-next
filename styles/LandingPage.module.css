@@ -5,19 +5,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  margin-bottom: 80px; 
+  margin-bottom: 80px;
   margin-top: 90px;
-  
-  
 }
 
 .textDiv {
-  position: absolute; 
-  top: 200px;
-  left: 250px;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  
+  position: absolute;
+  left: 2.5rem;
+  width: 45%;
 }
 
 .imgCard {
@@ -32,9 +27,7 @@
   font-size: 50px;
   text-shadow: 0px 3px 2px white;
   font-weight: 900;
-  margin-left: 330px;
   margin-top: 250px;
-  
 }
 .h2 {
   color: #2b2d42;
@@ -42,7 +35,6 @@
   text-shadow: 2px 4px 2px lightgray;
   margin-bottom: 80px;
   font-weight: 700;
-  
 }
 .spacer {
   margin-top: 1rem;
@@ -56,7 +48,7 @@
   margin-bottom: 2rem;
 }
 .pTittle {
-  color: #2b2d42 ;
+  color: #2b2d42;
   font-size: 20px;
   font-weight: bolder;
   text-align: center;
@@ -71,18 +63,18 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 80px;
-  
 }
 .insideCard {
+  width: 30%;
   padding-top: 20px;
-  box-shadow: 9px 9px 15px 9px rgba(224,224,224,0.76);
+  box-shadow: 9px 9px 15px 9px rgba(224, 224, 224, 0.76);
+  align-items: stretch;
 }
 .fit {
   object-fit: cover;
   object-position: center center;
   width: 100%;
   height: 980px;
- 
 }
 
 /*.textCarrusel{
@@ -102,20 +94,18 @@
   margin-top: 100px;
 }
 
-.cardCase{
+.cardCase {
   height: 550px;
   background-color: #2b2d42;
   border-radius: 35px;
   margin-top: 50px;
-
-  
 }
-.cardCase > div:first-of-type{
+.cardCase > div:first-of-type {
   display: flex;
   justify-content: space-between;
 }
 
-.imgCardCase{
+.imgCardCase {
   width: 35%;
   height: 450px;
   border-radius: 35px;
@@ -123,7 +113,7 @@
   object-fit: cover;
 }
 
-.textCardCase{
+.textCardCase {
   width: 500px;
   margin-top: 35px;
   color: #fff;
@@ -131,7 +121,7 @@
   font-weight: 600;
 }
 
-.textCardCase2{
+.textCardCase2 {
   width: 500px;
   margin-top: 35px;
   color: #fff;
@@ -140,34 +130,33 @@
   text-align: right;
 }
 
-
-.nameCardCase{
+.nameCardCase {
   color: #fff;
   font-size: 25px;
   font-weight: 800;
 }
 
-.nameCardCase2{
+.nameCardCase2 {
   color: #fff;
   font-size: 25px;
   font-weight: 800;
   text-align: right;
 }
 
-.nameCardCase_{
+.nameCardCase_ {
   color: #fff;
   font-size: 25px;
   font-weight: 700;
   margin-top: -30px;
 }
 
-.downCard{
+.text_right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.footer{
+.footer {
   background-color: #2b2d42;
   color: #fff;
   padding: 50px 100px;
@@ -176,35 +165,55 @@
   font-weight: 700;
 }
 
-.linksContainer{
+.linksContainer {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-
 }
 
-.ul{
+.ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.ul li{
+.ul li {
   display: inline-block;
   margin: 0 35px;
   font-size: 20px;
-
 }
 
-
-@media screen and (max-width: 600px) {
-
-  .cards {
+@media screen and (max-width: 570px) {
+  .cardCase {
+    height: auto;
+    display: flex;
+  }
+  .cardCase > div:first-of-type {
     flex-direction: column;
   }
-  .insideCard{
-    margin-bottom: 55px;
+  .fit {
+    height: 320px;
   }
+  .cards {
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .insideCard {
+    margin-bottom: 55px;
+    width: 100%;
+  }
+  .imgCardCase {
+    width: 100%;
+  }
+  .textCardCase2 {
+    text-align: left;
+  }
+
+  .text_right {
+    align-items: flex-start;
+  }
+
   .h2 {
     font-size: 1.5rem;
   }
@@ -217,12 +226,42 @@
     font-size: 1rem;
     text-shadow: 0px 3px 2px white;
     font-weight: bolder;
+    margin-top: 0;
   }
   .textDiv {
     position: absolute;
-    top: 100px;
-    left: 70px;
-    transform: translate(-50%, -50%);
-    width: 33%;
+    top: 50px;
+    left: 1rem;
+    width: 50%;
   }
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .linksContainer {
+    flex-direction: column;
+  }
+  .ul li {
+    margin: 1rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  .cards .insideCard {
+    min-height: 500px;
+  }
+  .wrapp_info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .textCardCase,
+  .textCardCase2 {
+    width: auto;
+  }
+  .text_right {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (max-width: 570px) {
 }

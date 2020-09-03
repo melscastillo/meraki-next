@@ -74,178 +74,184 @@ const RegistroFotografa = () => {
 
   return (
     <Row>
-      <Col md={16} sm={24}>
+      <Col xs={24} md={16} sm={2}>
         <Row>
-          <Col offset={6} md={12} sm={24}>
+          <Col offset={6} md={24} sm={24} xs={{ offset: 0 }}>
             <h1 className={styles.logo}>MERAKI</h1>
-            <p className={styles.title}>¿Ya tienes una cuenta?</p>
-            <p className={styles.iniciaSesion}>
-              {" "}
-              <Link href="/login" passHref>
-                <a>Inicia Sesión</a>
-              </Link>
-            </p>
-            <Form layout="vertical" onFinish={onFinish}>
-              <Form.Item
-                form={form}
-                className={styles.formItem}
-                label="Nombre"
-                name="name"
-                rules={[
-                  {
-                    required: true,
-                    message: "Por favor, ingresa tu nombre",
-                  },
-                ]}
-              >
-                <Input placeholder="" />
-              </Form.Item>
-              <Form.Item
-                form={form}
-                className={styles.formItem}
-                label="Apellido"
-                name="apellido"
-                rules={[
-                  {
-                    required: true,
-                    message: "Por favor, ingresa tu apellido",
-                  },
-                ]}
-              >
-                <Input placeholder="" />
-              </Form.Item>
-              <Form.Item
-                className={styles.formItem}
-                label="Email"
-                name="email"
-                rules={[
-                  {
-                    type: "email",
-                    required: true,
-                    message: "Por favor, ingresa tu correo electrónico",
-                  },
-                ]}
-              >
-                <Input placeholder="" type="email" />
-              </Form.Item>
-              <Form.Item
-                className={styles.formItem}
-                label="Contraseña"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Por favor, ingresa tu contraseña",
-                  },
-                ]}
-              >
-                <Input placeholder="" type="password" />
-              </Form.Item>
 
-              <Form.Item
-                className={styles.formItem}
-                label="¿En qué categoría de fotografía te especializas? (Puedes elegir hasta tres categorías distintas)"
-                name="category"
-              >
-                <Checkbox.Group
-                  options={categoryList}
-                  onChange={onChange}
-                  value={selectedCategories}
-                />
-              </Form.Item>
-              <Form.Item
-                className={styles.formItem}
-                label="Cuéntanos más acerca de ti"
-                name="description"
-              >
-                <Input.TextArea rows={4} />
-              </Form.Item>
-
-              <Form.Item
-                className={styles.formItem}
-                label="Comparte la URL de tu porfatolio AQUÍ:"
-                name="portfolio"
-              >
-                <Input placeholder="" type="url" />
-              </Form.Item>
-
-              <p className={styles.textLabel}>
+            <div className={styles.content_wrapper}>
+              <p className={styles.title}>¿Ya tienes una cuenta?</p>
+              <p className={styles.iniciaSesion}>
                 {" "}
-                Compartenos tu sitio web y redes sociales
+                <Link href="/login" passHref>
+                  <a>Inicia Sesión</a>
+                </Link>
               </p>
-              <Form.Item
-                className={cx(styles.formItem, styles.socialInput)}
-                name="website"
-                label={<img width="24" src="/images/Icons/sphere.svg" />}
+              <Form
+                layout="vertical"
+                onFinish={onFinish}
+                className={styles.form_wrapper}
               >
-                <Input placeholder="" type="url" />
-              </Form.Item>
-
-              <Form.Item
-                className={cx(styles.formItem, styles.socialInput)}
-                name="facebook"
-                label={<img width="24" src="/images/Icons/facebook.svg" />}
-              >
-                <Input placeholder="" type="url" />
-              </Form.Item>
-
-              <Form.Item
-                className={cx(styles.formItem, styles.socialInput)}
-                name="instagram"
-                label={<img width="24" src="/images/Icons/instagram.svg" />}
-              >
-                <Input type="url" />
-              </Form.Item>
-              <Form.Item
-                className={cx(styles.formItem, styles.socialInput)}
-                name="linkedin"
-                label={<img width="24" src="/images/Icons/linkedin.svg" />}
-              >
-                <Input type="url" />
-              </Form.Item>
-              <p className={styles.textLabel}>
-                Elige las 6 mejores fotografías que mejor definan tu trabajo
-              </p>
-              <ul className={styles.submitPhotos}>
-                <li> Formato .JPG</li>
-                <li> Máximo 5mp</li>
-                <li>
-                  Estas fotografías serán públicas y se mostrarán en tu perfil.
-                  Podrás modificarlas cuando lo desees.
-                </li>
-              </ul>
-              <div>
-                <Droppi callback={setimagelist} />
-              </div>
-              <p className={styles.textLabel}>
-                Antes de unirte te invitamos a leer y aceptar nuestros{" "}
-                <a className={styles.terminos}>TÉRMINOS Y CONDICIONES</a>
-              </p>
-              <p className={styles.submitPhotos}>
-                <Checkbox /> He leído y acepto TÉRMINOS Y CONDICIONES
-              </p>
-              <div>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className={styles.submit}
-                  onClick={handleModalButton}
+                <Form.Item
+                  form={form}
+                  className={styles.formItem}
+                  label="Nombre"
+                  name="name"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, ingresa tu nombre",
+                    },
+                  ]}
                 >
-                  REGISTRARSE
-                </Button>
-              </div>
-              <Modales
-                visible={visible}
-                onOk={handleModalButton}
-                title="Gracias por registrarte"
-                text="Te enviamos un correo de confirmación"
-              ></Modales>
-            </Form>
+                  <Input placeholder="" />
+                </Form.Item>
+                <Form.Item
+                  form={form}
+                  className={styles.formItem}
+                  label="Apellido"
+                  name="apellido"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, ingresa tu apellido",
+                    },
+                  ]}
+                >
+                  <Input placeholder="" />
+                </Form.Item>
+                <Form.Item
+                  className={styles.formItem}
+                  label="Email"
+                  name="email"
+                  rules={[
+                    {
+                      type: "email",
+                      required: true,
+                      message: "Por favor, ingresa tu correo electrónico",
+                    },
+                  ]}
+                >
+                  <Input placeholder="" type="email" />
+                </Form.Item>
+                <Form.Item
+                  className={styles.formItem}
+                  label="Contraseña"
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, ingresa tu contraseña",
+                    },
+                  ]}
+                >
+                  <Input placeholder="" type="password" />
+                </Form.Item>
+
+                <Form.Item
+                  className={styles.formItem}
+                  label="¿En qué categoría de fotografía te especializas? (Puedes elegir hasta tres categorías distintas)"
+                  name="category"
+                >
+                  <Checkbox.Group
+                    options={categoryList}
+                    onChange={onChange}
+                    value={selectedCategories}
+                  />
+                </Form.Item>
+                <Form.Item
+                  className={styles.formItem}
+                  label="Cuéntanos más acerca de ti"
+                  name="description"
+                >
+                  <Input.TextArea rows={4} />
+                </Form.Item>
+
+                <Form.Item
+                  className={styles.formItem}
+                  label="Comparte la URL de tu porfatolio AQUÍ:"
+                  name="portfolio"
+                >
+                  <Input placeholder="" type="url" />
+                </Form.Item>
+
+                <p className={(styles.textLabel, styles.textLabelSocial)}>
+                  {" "}
+                  Compartenos tu sitio web y redes sociales
+                </p>
+                <Form.Item
+                  className={cx(styles.formItem, styles.socialInput)}
+                  name="website"
+                  label={<img width="24" src="/images/Icons/sphere.svg" />}
+                >
+                  <Input placeholder="" type="url" />
+                </Form.Item>
+
+                <Form.Item
+                  className={cx(styles.formItem, styles.socialInput)}
+                  name="facebook"
+                  label={<img width="24" src="/images/Icons/facebook.svg" />}
+                >
+                  <Input placeholder="" type="url" />
+                </Form.Item>
+
+                <Form.Item
+                  className={cx(styles.formItem, styles.socialInput)}
+                  name="instagram"
+                  label={<img width="24" src="/images/Icons/instagram.svg" />}
+                >
+                  <Input type="url" />
+                </Form.Item>
+                <Form.Item
+                  className={cx(styles.formItem, styles.socialInput)}
+                  name="linkedin"
+                  label={<img width="24" src="/images/Icons/linkedin.svg" />}
+                >
+                  <Input type="url" />
+                </Form.Item>
+                <p className={styles.textLabel}>
+                  Elige las 6 mejores fotografías que mejor definan tu trabajo
+                </p>
+                <ul className={styles.submitPhotos}>
+                  <li> Formato .JPG</li>
+                  <li> Máximo 5mp</li>
+                  <li>
+                    Estas fotografías serán públicas y se mostrarán en tu
+                    perfil. Podrás modificarlas cuando lo desees.
+                  </li>
+                </ul>
+                <div>
+                  <Droppi callback={setimagelist} />
+                </div>
+                <p className={styles.textLabel}>
+                  Antes de unirte te invitamos a leer y aceptar nuestros{" "}
+                  <a className={styles.terminos}>TÉRMINOS Y CONDICIONES</a>
+                </p>
+                <p className={styles.submitPhotos}>
+                  <Checkbox /> He leído y acepto TÉRMINOS Y CONDICIONES
+                </p>
+                <div className={styles.button_submit}>
+                  <Button
+                    htmlType="submit"
+                    className={styles.submit}
+                    onClick={handleModalButton}
+                  >
+                    REGISTRARSE
+                  </Button>
+                </div>
+                <Modales
+                  visible={visible}
+                  onOk={handleModalButton}
+                  title="Gracias por registrarte"
+                  text="Te enviamos un correo de confirmación"
+                ></Modales>
+              </Form>
+            </div>
           </Col>
         </Row>
       </Col>
 
-      <Col className={styles.aside} md={8}>
+      <Col className={styles.aside} xs={0} md={8}>
         <p>
           Únete a Meraki para conocer ofertas laborales y promocionar tu trabajo
           con clientes de todo el país

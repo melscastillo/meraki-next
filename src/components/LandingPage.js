@@ -9,7 +9,6 @@ import {
 } from "@ant-design/icons";
 import styles from "../../styles/LandingPage.module.css";
 
-
 function LandingPage() {
   return (
     <>
@@ -46,7 +45,6 @@ function LandingPage() {
             <Card
               className={styles.insideCard}
               hoverable
-              style={{ width: 419, height: 414 }}
               cover={
                 <img
                   className={styles.imgCard}
@@ -67,7 +65,6 @@ function LandingPage() {
             <Card
               className={styles.insideCard}
               hoverable
-              style={{ width: 419, height: 414 }}
               cover={
                 <img
                   className={styles.imgCard}
@@ -87,7 +84,6 @@ function LandingPage() {
             <Card
               className={styles.insideCard}
               hoverable
-              style={{ width: 419, height: 414 }}
               cover={
                 <img
                   className={styles.imgCard}
@@ -158,7 +154,7 @@ function LandingPage() {
                 className={styles.imgCardCase}
                 src="/images/photo-1573878733211-a503d390fdd0.jpeg"
               />
-              <div>
+              <div className={styles.wrapp_info}>
                 <p className={styles.textCardCase}>
                   "Meraki me ayudó muchísimo a encontrar de manera rápida y
                   confiable a una excelente fotógrafa para hacer el shooting de
@@ -172,7 +168,7 @@ function LandingPage() {
             </Card>
 
             <Card className={styles.cardCase}>
-              <div className={styles.downCard}>
+              <div className={(styles.wrapp_info, styles.text_right)}>
                 <p className={styles.textCardCase2}>
                   "Meraki me ayudó a conocer a muchas personas y establecer
                   excelentes vínculos laborales y personales con otras
