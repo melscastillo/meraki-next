@@ -11,6 +11,17 @@ const getClient = async (id) => {
   const response = await fetch(`${URL_BASE}clients/${id}`);
   return await response.json();
 };
+//Traer fotografas
+const getPhotographers = async () => {
+  const response = await fetch(`${URL_BASE}photographers`);
+  return await response.json();
+};
+//Traer una fotografa
+const getPhotographer = async (id) => {
+  const response = await fetch(`${URL_BASE}photographers/${id}`);
+  return await response.json();
+};
+
 //Crear un nuevo cliente
 const signUp = async (request) => {
   const response = await fetch(`${URL_BASE}authClients/sign-up`, {
@@ -82,4 +93,6 @@ export {
   loginClients,
   loginPhotographers,
   addPhotos,
+  getPhotographers,
+  getPhotographer
 };
