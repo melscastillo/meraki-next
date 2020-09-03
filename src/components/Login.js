@@ -1,10 +1,15 @@
 import styles from "../../styles/Login.module.css";
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 import { loginClients, loginPhotographers } from "../server";
+import { Redirect } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import Navbar from "./Navbar";
 import Link from "next/link";
 
+
 function Login() {
+
+  const router = useRouter()
   const onFinish = async (values) => {
     console.log(values);
     try {
@@ -19,10 +24,13 @@ function Login() {
         const accessToken = response2.data.token;
         console.log("Response 2:", accessToken);
         localStorage.setItem("token", accessToken);
+
+        router.push('/busqueda')
       } else {
         const accessToken = response.data.token;
         console.log(accessToken);
         localStorage.setItem("token", accessToken);
+        router.push('/busqueda')
       }
     } catch (error) {
       console.log("error", error);

@@ -8,7 +8,7 @@ import { getPhotographers } from '../server'
 const Busqueda = () => {
   const [photographers, setPhotographers] = useState([])
   const [filteredPhotos, setFilteredPhotos] = useState([])
-  const [category, setCategory] = useState(" ")
+  const [category, setCategory] = useState("")
   /*  const handleInputChange = (key, value) => {
  
      console.log("propKey", key)
@@ -64,11 +64,11 @@ const Busqueda = () => {
     getallPhotographers();
   }, []);
 
-  const UICards = photographers.map(({ name, imagesUrl }) => {
+  const UICards = photographers.map(({ name, imagesUrl, _id }) => {
 
     const image = imagesUrl[1]
     return (
-      <Resultado image={image} name={name} />
+      <Resultado image={image} name={name} id={_id} />
     )
   })
 
@@ -99,7 +99,7 @@ const Busqueda = () => {
               >
                 <Select.Option value="eventos" key="eventos" className={cx(styles.typography, styles.selectOption)} >Eventos</Select.Option>
                 <Select.Option value="retrato" key="retrato" className={cx(styles.typography, styles.selectOption)} >Retrato</Select.Option>
-                <Select.Option value="fotografiadeproducto" key="fotografiadeproducto" className={cx(styles.typography, styles.selectOption)} value="fotografiadeproducto">
+                <Select.Option value="fotografiadeproducto" key="fotografiadeproducto" className={cx(styles.typography, styles.selectOption)}>
                   Fotografía de Producto
               </Select.Option>
                 <Select.Option key="fotografiademoda" className={cx(styles.typography, styles.selectOption)} value="fotografiademoda">
@@ -115,10 +115,10 @@ const Busqueda = () => {
       </Row>
       <Row className={styles.typography}>
         {UICards}
-        <Resultado image="/images/photo-1531898611418-0ceb51a8e0ad.jpeg" name="Nitzelli Villa" />
+        {/*         <Resultado image="/images/photo-1531898611418-0ceb51a8e0ad.jpeg" name="Nitzelli Villa" />
         <Resultado image="/images/photo-1570536205668-ab1bdc67b4aa.jpeg" name="Iliana Maldonado" />
         <Resultado image="/images/photo-1568759532835-15e70ca7946f.jpeg" name="Melissa Castillo" />
-        <Resultado image="/images/photo-1575865641151-ad4fddb7b418.jpeg" name="Karen Corona" />
+        <Resultado image="/images/photo-1575865641151-ad4fddb7b418.jpeg" name="Karen Corona" /> */}
       </Row>
     </>
   );

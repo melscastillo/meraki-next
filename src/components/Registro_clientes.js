@@ -140,6 +140,7 @@ function ClientsRegister() {
                   ]}
                 >
                   <Input
+
                     value={nameCt}
                     name="nameCt"
                     className={styles.inputs}
@@ -188,8 +189,9 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="password"
-                  name={"Contraseña"}
+                  label="Contraseña"
+                  name={"password"}
+
                   rules={[
                     {
                       required: true,
@@ -208,8 +210,8 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="phone"
-                  name={"Teléfono"}
+                  label="Telefono"
+                  name={"phone"}
                   rules={[
                     {
                       required: true,

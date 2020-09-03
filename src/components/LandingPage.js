@@ -216,7 +216,7 @@ function LandingPage() {
                   name="submit"
                   title="PayPal - The safer, easier way to pay online!"
                   alt="Donar con el botón PayPal"
-                  width = "150"
+                  width="150"
                 />
                 <img
                   alt=""
