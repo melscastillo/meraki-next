@@ -72,10 +72,6 @@ const RegistroFotografa = () => {
     setVisible(true);
   };
 
-  const handleModalAccept = () => {
-    setVisible(false);
-  };
-
   return (
     <Row>
       <Col md={16} sm={24}>
@@ -182,7 +178,6 @@ const RegistroFotografa = () => {
                 name="website"
                 label={<img width="24" src="/images/Icons/sphere.svg" />}
               >
-
                 <Input placeholder="" type="url" />
               </Form.Item>
 
@@ -191,7 +186,6 @@ const RegistroFotografa = () => {
                 name="facebook"
                 label={<img width="24" src="/images/Icons/facebook.svg" />}
               >
-
                 <Input placeholder="" type="url" />
               </Form.Item>
 
@@ -200,7 +194,6 @@ const RegistroFotografa = () => {
                 name="instagram"
                 label={<img width="24" src="/images/Icons/instagram.svg" />}
               >
-
                 <Input type="url" />
               </Form.Item>
               <Form.Item
@@ -208,7 +201,6 @@ const RegistroFotografa = () => {
                 name="linkedin"
                 label={<img width="24" src="/images/Icons/linkedin.svg" />}
               >
-
                 <Input type="url" />
               </Form.Item>
               <p className={styles.textLabel}>

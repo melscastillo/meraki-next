@@ -1,10 +1,13 @@
-.ant-modal .ant-modal-content {
-}
-
-.modales label {
+.modales div {
   border-radius: 10px;
-  background: black;
-  font: bold;
+  background: #2b2d42;
+  font-weight: bold;
+  color: white;
+  border: none;
+  text-align: center;
+}
+.modales svg path {
+  fill: white;
 }
 
 .button {
@@ -13,8 +16,12 @@
   font-weight: bold;
   border: none;
   border-radius: 10px;
-  margin-right: 20px;
+  transition: all linear 0.35s;
 }
+.button:hover span {
+  transition: all linear 0.35s;
+}
+
 .button:hover {
   background: white;
   color: #df928e;

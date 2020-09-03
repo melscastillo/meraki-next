@@ -49,10 +49,7 @@ function ClientsRegister() {
 
   const handleModalButton = () => {
     setVisible(true);
-  };
-
-  const handleModalAccept = () => {
-    setVisible(false);
+    console.log("visible");
   };
 
   const onFinish = async (value) => {
@@ -246,8 +243,8 @@ function ClientsRegister() {
                 <Form.Item className={styles.button_wrapper}>
                   <Button
                     className={styles.button_submit}
-                    htmlType="button"
-                    onClick={handleModalButton}
+                    htmlType="submit"
+                    onClick={handleModalButton} //mostrar modal
                   >
                     REGISTRARSE
                   </Button>
@@ -261,7 +258,7 @@ function ClientsRegister() {
         visible={visible}
         onOk={handleModalButton}
         title="Gracias por registrarte"
-        text="Te enviamos un correo de confirmación"
+        text="Ahora puedes inicar sesión"
       ></Modales>
     </>
   );
