@@ -130,7 +130,7 @@ function ClientsRegister() {
               >
                 <Form.Item
                   className={styles.form_item}
-                  name={"Nombre"}
+                  name={"name"}
                   label="Nombre"
                   rules={[
                     {
@@ -140,6 +140,7 @@ function ClientsRegister() {
                   ]}
                 >
                   <Input
+
                     value={nameCt}
                     name="nameCt"
                     className={styles.inputs}
@@ -149,7 +150,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  name={"Apellido"}
+                  name={"lastName"}
                   label="Apellido"
                   rules={[
                     {
@@ -168,7 +169,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  name={"Correo electrónico"}
+                  name={"email"}
                   label="Correo electrónico"
                   rules={[
                     {
@@ -188,8 +189,8 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="Contraseña"
-                  name={"Contraseña"}
+                  label="password"
+                  name={"password"}
                   rules={[
                     {
                       required: true,
@@ -208,8 +209,8 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="Teléfono"
-                  name={"Teléfono"}
+                  label="phone"
+                  name={"phone"}
                   rules={[
                     {
                       required: true,
@@ -227,7 +228,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  name={"Dirección"}
+                  name={"adress"}
                   label="Dirección"
                   rules={[
                     {
