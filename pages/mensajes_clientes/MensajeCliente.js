@@ -1,4 +1,4 @@
-import styles from "../styles/mensajecliente.module.css";
+import styles from "../../styles/mensajecliente.module.css";
 import {
   Layout,
   Avatar,

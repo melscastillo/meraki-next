@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ImageUploading from "react-images-uploading";
+import {Button} from "antd";
+import styles from "../../styles/dropzone.module.css";
 
 // import "./styles.css";
 
@@ -11,14 +13,7 @@ function Droppi({ callback }) {
     // data for submit
     console.log(imageList);
     setPhotos(imageList);
-    const img1 = imageList[0].file;
-    const img2 = imageList[1].file;
-    const img3 = imageList[2].file;
-    const img4 = imageList[3].file;
-    const img5 = imageList[4].file;
-    const img6 = imageList[5].file;
-    const img7 = imageList[6].file;
-    const imagesUrl = [img1, img2, img3, img4, img5, img6, img7];
+    const imagesUrl = imageList.map(img => img.file);
     callback(imagesUrl);
     console.log(imagesUrl);
   };
@@ -43,21 +38,21 @@ function Droppi({ callback }) {
         }) => (
           // write your building UI
           <div className="upload__image-wrapper">
-            <button
+            <Button className = {styles.buttonStyle}
               style={isDragging ? { color: "red" } : null}
               onClick={onImageUpload}
-              {...dragProps}
-            >
-              Click or Drop here
-            </button>
+              {...dragProps}>
+            
+              Click or Drop Here
+            </Button>
             &nbsp;
-            <button onClick={onImageRemoveAll}>Remove all images</button>
+            <Button className = {styles.buttonStyle} onClick={onImageRemoveAll}>Remove all images</Button>
             {imageList.map((image, index) => (
               <div key={index} className="image-item">
                 <img src={image.data_url} alt="" width="100" />
                 <div className="image-item__btn-wrapper">
-                  <button onClick={() => onImageUpdate(index)}>Update</button>
-                  <button onClick={() => onImageRemove(index)}>Remove</button>
+                  <Button onClick={() => onImageUpdate(index)}>Update</Button>
+                  <Button onClick={() => onImageRemove(index)}>Remove</Button>
                 </div>
               </div>
             ))}

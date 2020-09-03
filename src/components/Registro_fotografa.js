@@ -3,7 +3,7 @@ import cx from "classnames";
 import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
 import Modales from "../components/modal";
 import styles from "../../styles/RegistroFotografa.module.css";
-
+import Link from "next/link";
 import { signUpPhotographers, addPhotos } from "../server";
 import Droppi from "../components/Dropzone";
 
@@ -85,7 +85,9 @@ const RegistroFotografa = () => {
             <p className={styles.title}>¿Ya tienes una cuenta?</p>
             <p className={styles.iniciaSesion}>
               {" "}
-              <a>Inicia Sesión</a>
+              <Link href="/login" passHref>
+                <a>Inicia Sesión</a>
+              </Link>
             </p>
             <Form layout="vertical" onFinish={onFinish}>
               <Form.Item
@@ -178,31 +180,35 @@ const RegistroFotografa = () => {
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="website"
+                label={<img width="24" src="/images/Icons/sphere.svg" />}
               >
-                <img width="24" src="/images/Icons/sphere.svg" />
+
                 <Input placeholder="" type="url" />
               </Form.Item>
 
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="facebook"
+                label={<img width="24" src="/images/Icons/facebook.svg" />}
               >
-                <img width="24" src="/images/Icons/facebook.svg" />
+
                 <Input placeholder="" type="url" />
               </Form.Item>
 
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="instagram"
+                label={<img width="24" src="/images/Icons/instagram.svg" />}
               >
-                <img width="24" src="/images/Icons/instagram.svg" />
+
                 <Input type="url" />
               </Form.Item>
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="linkedin"
+                label={<img width="24" src="/images/Icons/linkedin.svg" />}
               >
-                <img width="24" src="/images/Icons/linkedin.svg" />
+
                 <Input type="url" />
               </Form.Item>
               <p className={styles.textLabel}>

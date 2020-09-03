@@ -1,5 +1,6 @@
 import styles from "../styles/mensajesfoto.module.css";
 import { Layout, Avatar, List, Row, Col, Button } from "antd";
+import Link from "next/link";
 
 const { Header, Sider, Content } = Layout;
 
@@ -65,8 +66,9 @@ function Mensaje() {
         <div className={styles.text_wrapper}>
           <span>ASUNTO: Sesión pareja</span> <span>Fecha:27/08720</span>
         </div>
-
+        <Link href="/mensaje_individual">
         <Button className={styles.button}>Ver Mensaje</Button>
+        </Link>
       </Col>
     </Row>
   );

@@ -18,7 +18,7 @@ const Busqueda = () => {
       <Row>
         <Col offset={1} span={21}>
             
-          <Form className = {cx (styles.typography, styles.label)} >
+          <Form className = {styles.label} >
               <Form.Item label= "Selecciona una categoría">
             <Select className ={styles.select}
               showSearch
@@ -48,7 +48,7 @@ const Busqueda = () => {
         <Resultado image= "/images/photo-1531898611418-0ceb51a8e0ad.jpeg" name= "Nitzelli Villa" />
         <Resultado image= "/images/photo-1570536205668-ab1bdc67b4aa.jpeg" name= "Iliana Maldonado" />
         <Resultado image= "/images/photo-1568759532835-15e70ca7946f.jpeg" name= "Melissa Castillo" />
-        <Resultado image= "/images/photo-1575865641151-ad4fddb7b418.jpeg" name= "Kikish Reveles" />
+        <Resultado image= "/images/photo-1575865641151-ad4fddb7b418.jpeg" name= "Karen Corona" />
       </Row>
     </>
   );

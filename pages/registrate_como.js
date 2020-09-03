@@ -1,5 +1,6 @@
 import styles from "./../styles/registrateComo.module.css";
 import { Layout, Button, Card } from "antd";
+import Link from 'next/link';
 
 const { Content } = Layout;
 
@@ -28,7 +29,9 @@ function RegistrateComo() {
                   clientes de todo el país.
                 </p>
               </div>
+              <Link href = "/registro/fotografas">
               <Button className={styles.button}>FOTÓGRAFA</Button>
+              </Link>
             </Card>
 
             <Card
@@ -47,7 +50,9 @@ function RegistrateComo() {
                   Registrate como CLIENTE para publicar tus ofertas laborales
                 </p>
               </div>
+              <Link href = "/registro/clientes">
               <Button className={styles.button}>CLIENTE</Button>
+              </Link>
             </Card>
           </div>
         </Content>

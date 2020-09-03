@@ -1,7 +1,14 @@
-import styles from "../../styles/LandingPage.module.css";
 import { Row, Col, Card, Carousel, Rate } from "antd";
-import { TwitterOutlined, FacebookOutlined, LinkedinOutlined, InstagramOutlined } from "@ant-design/icons"
+import Link from "next/link";
 import Navbar from "./Navbar";
+import {
+  TwitterOutlined,
+  FacebookOutlined,
+  LinkedinOutlined,
+  InstagramOutlined,
+} from "@ant-design/icons";
+import styles from "../../styles/LandingPage.module.css";
+
 
 function LandingPage() {
   return (
@@ -139,7 +146,11 @@ function LandingPage() {
               />
             </div>
           </Carousel>
+        </Col>
+      </Row>
 
+      <Row>
+        <Col span={24}>
           <p className={styles.textCases}>Casos de Éxito</p>
           <div>
             <Card className={styles.cardCase}>
@@ -156,12 +167,12 @@ function LandingPage() {
                 </p>
                 <p className={styles.nameCardCase}>Blanca Guerra</p>
                 <p className={styles.nameCardCase_}>Guadalajara, Gdl.</p>
-                <Rate style = {{fontSize:"25px"}}disabled/>
+                <Rate style={{ fontSize: "25px" }} disabled />
               </div>
             </Card>
 
             <Card className={styles.cardCase}>
-              <div className = {styles.downCard}>
+              <div className={styles.downCard}>
                 <p className={styles.textCardCase2}>
                   "Meraki me ayudó a conocer a muchas personas y establecer
                   excelentes vínculos laborales y personales con otras
@@ -169,7 +180,7 @@ function LandingPage() {
                 </p>
                 <p className={styles.nameCardCase}>Sara Reveles</p>
                 <p className={styles.nameCardCase_}>CDMX, México.</p>
-                <Rate style = {{fontSize:"25px"}}disabled/>
+                <Rate style={{ fontSize: "25px" }} disabled />
               </div>
               <img
                 className={styles.imgCardCase}
@@ -177,20 +188,32 @@ function LandingPage() {
               />
             </Card>
           </div>
-          <footer className = {styles.footer}>
-              <p>MERAKI, 2020.</p>
-              <hr />
-            <div className = {styles.linksContainer}>
-              <ul className = {styles.ul}>
+          <footer className={styles.footer}>
+            <p>MERAKI, 2020.</p>
+            <hr />
+            <div className={styles.linksContainer}>
+              <ul className={styles.ul}>
                 <li>HOME</li>
                 <li>ABOUT</li>
                 <li>CONTACT</li>
               </ul>
-              <ul className = {styles.ul}>
-                <li> <TwitterOutlined/> </li>
-                <li> <FacebookOutlined/> </li>
-                <li> <LinkedinOutlined/> </li>
-                <li> <InstagramOutlined/> </li>
+              <ul className={styles.ul}>
+                <li>
+                  {" "}
+                  <TwitterOutlined />{" "}
+                </li>
+                <li>
+                  {" "}
+                  <FacebookOutlined />{" "}
+                </li>
+                <li>
+                  {" "}
+                  <LinkedinOutlined />{" "}
+                </li>
+                <li>
+                  {" "}
+                  <InstagramOutlined />{" "}
+                </li>
               </ul>
             </div>
           </footer>

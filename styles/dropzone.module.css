@@ -1,0 +1,17 @@
+.buttonStyle{
+    background-color: #DF928E;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #ddd;
+    margin-top: 15px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.buttonStyle:hover{
+    background-color: #fff;
+    border: 1px solid #DF928E;
+    color: #DF928E;
+}
