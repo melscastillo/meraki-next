@@ -23,7 +23,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 5px 5px 5px #dddddd;
   position: relative;
 }
 
@@ -62,4 +61,15 @@
   border: 1px solid #9bbfb8;
   box-shadow: 5px 5px 5px #dddddd;
   color: #9bbfb8;
+}
+
+@media screen and (max-width: 570px) {
+  .card_wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .insideCard {
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 5px #dddddd;
+  }
 }
