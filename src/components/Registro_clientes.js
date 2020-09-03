@@ -14,7 +14,7 @@ function ClientsRegister() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [phone, setphone] = useState(0);
-  const [adress, setadress] = useState("");
+
   const [profilepicture, setprofilepicture] = useState("");
   const [visible, setVisible] = useState(false);
 
@@ -189,8 +189,9 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="password"
+                  label="Contraseña"
                   name={"password"}
+
                   rules={[
                     {
                       required: true,
@@ -209,7 +210,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="phone"
+                  label="Telefono"
                   name={"phone"}
                   rules={[
                     {
@@ -221,25 +222,6 @@ function ClientsRegister() {
                   <Input
                     value={phone}
                     name="phone"
-                    className={styles.inputs}
-                    onChange={handlerInput}
-                  />
-                </Form.Item>
-
-                <Form.Item
-                  className={styles.form_item}
-                  name={"adress"}
-                  label="Dirección"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Por favor, ingresa tu dirección",
-                    },
-                  ]}
-                >
-                  <Input
-                    value={adress}
-                    name="adress"
                     className={styles.inputs}
                     onChange={handlerInput}
                   />
