@@ -180,25 +180,15 @@
   font-size: 25px;
   font-weight: 700;
 }
-.donateText button{
-  color: #2b2d42;
-  background-color: #9bbfb8;
-  font-size: 20px;
-  width: 300px;
-  height: 50px;
+.donateText form{
+  
   padding: 10px 0 15px;
-  font-weight: 700;
-  border-radius: 5px;
-  box-shadow: 9px 9px 15px 9px rgba(224, 224, 224, 0.76);
+ 
+  
+  
   align-self: center;
 
 }
-.donateText button:hover{
-  background-color: #fff;
-  color: #9bbfb8;
-  border: 1px solid #9bbfb8;
-}
-
 .donateImg img{
   object-fit: cover;
   width: 100%;
