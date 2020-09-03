@@ -2,8 +2,9 @@ import { useState } from "react";
 import cx from "classnames";
 import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
 import styles from "../../styles/RegistroFotografa.module.css";
-
-import { signUpPhotographers } from "../server";
+import Link from "next/link";
+import { signUpPhotographers, addPhotos } from "../server";
+import Droppi from "../components/Dropzone";
 
 const RegistroFotografa = () => {
   const [form] = Form.useForm();
@@ -16,10 +17,13 @@ const RegistroFotografa = () => {
     "Fotografía de Moda",
     "Fotografía Documental o Fotoperiodismo",
   ];
+  const [list, setlist] = useState([]);
+
+  const setimagelist = (listimage) => {
+    setlist(listimage);
+  };
 
   const onChange = (checkedValues) => {
-    console.log (checkedValues, "test")
-    
     if (checkedValues.length >= 3) {
       const options = checkedValues.slice(0, 3);
       setSelectedCategories(options);
@@ -38,6 +42,23 @@ const RegistroFotografa = () => {
         return;
       }
       console.log("response", response.data);
+      const id = response.data.photograper._id;
+      try {
+        console.log(list);
+        const formData = new FormData();
+        for (let photo in list) {
+          formData.append("photos", list[photo]);
+        }
+        console.log(formData);
+        const responseImg = await addPhotos(id, formData);
+        if (!responseImg.success) {
+          console.log("Error: ", responseImg.error);
+          return;
+        }
+        console.log("response", responseImg.data);
+      } catch (error) {
+        console.log("error image", error);
+      }
       form.resetFields();
     } catch (error) {
       console.log("error", error);
@@ -47,14 +68,16 @@ const RegistroFotografa = () => {
   console.log(selectedCategories);
   return (
     <Row>
-      <Col md ={16} sm = {24}>
+      <Col md={16} sm={24}>
         <Row>
-          <Col offset={6} md ={12} sm = {24}>
+          <Col offset={6} md={12} sm={24}>
             <h1 className={styles.logo}>MERAKI</h1>
             <p className={styles.title}>¿Ya tienes una cuenta?</p>
             <p className={styles.iniciaSesion}>
               {" "}
+              <Link href="/login" passHref>
               <a>Inicia Sesión</a>
+              </Link>
             </p>
             <Form layout="vertical" onFinish={onFinish}>
               <Form.Item
@@ -62,11 +85,11 @@ const RegistroFotografa = () => {
                 className={styles.formItem}
                 label="Nombre"
                 name="name"
-                rules = {[
+                rules={[
                   {
                     required: true,
-                    message: "Por favor, ingresa tu nombre"
-                  }
+                    message: "Por favor, ingresa tu nombre",
+                  },
                 ]}
               >
                 <Input placeholder="" />
@@ -76,25 +99,26 @@ const RegistroFotografa = () => {
                 className={styles.formItem}
                 label="Apellido"
                 name="apellido"
-                rules = {[
+                rules={[
                   {
                     required: true,
-                    message: "Por favor, ingresa tu apellido"
-                  }
+                    message: "Por favor, ingresa tu apellido",
+                  },
                 ]}
               >
                 <Input placeholder="" />
               </Form.Item>
-              <Form.Item className={styles.formItem} 
-              label="Email" 
-              name="email"
-              rules={[
-                {
-                  type: "email",
-                  required: true,
-                  message: "Por favor, ingresa tu correo electrónico",
-                },
-              ]}
+              <Form.Item
+                className={styles.formItem}
+                label="Email"
+                name="email"
+                rules={[
+                  {
+                    type: "email",
+                    required: true,
+                    message: "Por favor, ingresa tu correo electrónico",
+                  },
+                ]}
               >
                 <Input placeholder="" type="email" />
               </Form.Item>
@@ -139,7 +163,10 @@ const RegistroFotografa = () => {
                 <Input placeholder="" type="url" />
               </Form.Item>
 
-              <p className = {styles.textLabel}> Compartenos tu sitio web y redes sociales</p>
+              <p className={styles.textLabel}>
+                {" "}
+                Compartenos tu sitio web y redes sociales
+              </p>
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="website"
@@ -149,7 +176,7 @@ const RegistroFotografa = () => {
               </Form.Item>
 
               <Form.Item
-                className={cx (styles.formItem, styles.socialInput)}
+                className={cx(styles.formItem, styles.socialInput)}
                 name="facebook"
               >
                 <img width="24" src="/images/Icons/facebook.svg" />
@@ -170,10 +197,10 @@ const RegistroFotografa = () => {
                 <img width="24" src="/images/Icons/linkedin.svg" />
                 <Input type="url" />
               </Form.Item>
-              <p className = {styles.textLabel}>
+              <p className={styles.textLabel}>
                 Elige las 6 mejores fotografías que mejor definan tu trabajo
               </p>
-              <ul className = {styles.submitPhotos}>
+              <ul className={styles.submitPhotos}>
                 <li> Formato .JPG</li>
                 <li> Máximo 5mp</li>
                 <li>
@@ -181,36 +208,25 @@ const RegistroFotografa = () => {
                   Podrás modificarlas cuando lo desees.
                 </li>
               </ul>
-              <Upload
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                listType="picture"
-              >
-                <Button className={styles.uploadButton}>
-                  <svg
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 512 512"
-                  >
-                    <title></title>
-                    <g id="icomoon-ignore"></g>
-                    <path d="M224 288h64v-128h96l-128-128-128 128h96zM320 216v49.356l146.533 54.644-210.533 78.509-210.533-78.509 146.533-54.644v-49.356l-192 72v128l256 96 256-96v-128z"></path>
-                  </svg>
-                  AGREGAR ARCHIVOS
-                </Button>
-              </Upload>
-              <p className = {styles.textLabel}>
+              <div>
+                <Droppi callback={setimagelist} />
+              </div>
+              <p className={styles.textLabel}>
                 Antes de unirte te invitamos a leer y aceptar nuestros{" "}
-                <a className = {styles.terminos}>TÉRMINOS Y CONDICIONES</a>
+                <a className={styles.terminos}>TÉRMINOS Y CONDICIONES</a>
               </p>
-              <p className = {styles.submitPhotos}>
+              <p className={styles.submitPhotos}>
                 <Checkbox /> He leído y acepto TÉRMINOS Y CONDICIONES
               </p>
               <div>
-                <Button className={styles.submit}>REGISTRARSE</Button>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className={styles.submit}
+                >
+                  REGISTRARSE
+                </Button>
               </div>
-              
             </Form>
           </Col>
         </Row>

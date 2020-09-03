@@ -10,42 +10,60 @@ import {
   Divider,
   Input,
 } from "antd";
-import { HighlightOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
-import { useState } from "react";
-
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 const { TextArea } = Input;
 
 function VerMensaje() {
   return (
     <container>
       <Layout className={styles.layout}>
-        <Header className={styles.header}>
-          MERAKI
-          <Avatar className={styles.avatar} size={40} src="" />
-        </Header>
+        <Row className={styles.center}>
+          <Col
+            className={styles.nav_wrapper}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
+            xl={24}
+          >
+            <div>
+              <p className={styles.meraki}>MERAKI</p>
+            </div>
+            <div>
+              <Avatar
+                className={styles.avatar}
+                size={60}
+                src="https://picsum.photos/id/237/200/300"
+              />
+            </div>
+          </Col>
+        </Row>
+
         <Layout>
           <Sider className={styles.sider}>
             <div className={styles.list}>
-              <List className={styles.item1}>
-                <a Mis Mensajes>
-                  {"Mis Mensajes "}
-                </a>
-              </List>
-              <List className={styles.item2}>
+              <List className={styles.item}>
                 <a Editar Perfil>
                   {"Editar Perfil "}
                 </a>
               </List>
-              <List className={styles.item3}>
+              <List className={styles.item}>
+              <Link href="/mensaje_fotografa" passHref>
+                <a Mis Mensajes>
+                  {"Mis Mensajes"}
+                </a>
+                </Link>
+              </List>
+              <List className={styles.item}>
                 <a Mis Ofertas>
                   {"Mis Ofertas "}
                 </a>
               </List>
             </div>
           </Sider>
-          <Content>
+          <Content className={styles.content}>
             <div>
               <LeerMensaje />
             </div>
@@ -75,10 +93,8 @@ function LeerMensaje() {
           </Card>
           <div>
             <TextArea rows={4} className={styles.textArea} />
-            <div>
-              <Button className={styles.btnsave} type="primary">
-                Enviar
-              </Button>
+            <div className={styles.btn}>
+              <Button className={styles.btnsave}>ENVIAR MENSAJE</Button>
             </div>
           </div>
         </div>

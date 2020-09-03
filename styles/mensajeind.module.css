@@ -2,17 +2,24 @@
   min-height: 100vh;
 }
 
-.header {
+.nav_wrapper {
   background: white;
-  font-size: 25px;
-  font-weight: bold;
-
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
+  padding: 10px 40px;
 }
-.sider {
-  background: #2b2d42;
+
+.meraki {
+  font-size: 35px;
+  font-weight: 900;
+  margin: 0;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
 .avatar {
@@ -21,42 +28,27 @@
   margin-right: 30px;
 }
 
-.item1 {
+.item {
   color: white;
-  padding: 50px;
+  padding: 50px 20px;
   font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
 }
-.item1:hover {
-  cursor: hand;
-}
-
-.item2 {
+.item:hover,
+.item:focus {
+  cursor: pointer;
   color: white;
-  padding: 50px;
-  font-weight: bold;
+  background-color: #161827;
+  font-size: 1.1rem;
 }
-.item2:hover {
-  cursor: hand;
-}
-
-.item3 {
+.item a {
   color: white;
-  padding: 50px;
-  font-weight: bold;
-}
-.item3:hover {
-  cursor: hand;
+  text-decoration: none;
 }
 
 .content {
   background: white;
-  position: absolute;
-  left: 92.08%;
-  right: -30.07%;
-  top: 6.18%;
-  bottom: 70.23%;
-
-  background: #698396;
 }
 .mensaje {
   background: rgba(105, 131, 150, 0.46);
@@ -69,18 +61,34 @@
 
 .textArea {
   border-radius: 10px;
-  margin-top: 50px;
+  border: none;
+  margin-top: 40px;
   background: rgba(105, 131, 150, 0.46);
   font-weight: bold;
   padding: 10px;
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
 .btnsave {
   color: white;
   font-weight: bold;
-  border-radius: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
   background: #9bbfb8;
-  margin-left: 200px;
-  margin-top: 10px;
-  width: 50%;
+  margin-top: 15px;
+  width: 250px;
+  height: 40px;
+  box-shadow: 5px 5px 5px #dddddd;
+}
+.btnsave:focus,
+.btnsave:hover {
+  outline: none;
+  border: 1px solid #9bbfb8;
+  box-shadow: 5px 5px 5px #dddddd;
+  color: #9bbfb8;
 }
