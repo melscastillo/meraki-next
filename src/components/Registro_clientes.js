@@ -14,7 +14,7 @@ function ClientsRegister() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [phone, setphone] = useState(0);
-  const [adress, setadress] = useState("");
+
   const [profilepicture, setprofilepicture] = useState("");
   const [visible, setVisible] = useState(false);
 
@@ -130,7 +130,7 @@ function ClientsRegister() {
               >
                 <Form.Item
                   className={styles.form_item}
-                  name={"Nombre"}
+                  name={"name"}
                   label="Nombre"
                   rules={[
                     {
@@ -149,7 +149,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  name={"Apellido"}
+                  name={"lastName"}
                   label="Apellido"
                   rules={[
                     {
@@ -168,7 +168,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  name={"Correo electrónico"}
+                  name={"email"}
                   label="Correo electrónico"
                   rules={[
                     {
@@ -188,7 +188,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="Contraseña"
+                  label="password"
                   name={"Contraseña"}
                   rules={[
                     {
@@ -208,7 +208,7 @@ function ClientsRegister() {
 
                 <Form.Item
                   className={styles.form_item}
-                  label="Teléfono"
+                  label="phone"
                   name={"Teléfono"}
                   rules={[
                     {
@@ -220,25 +220,6 @@ function ClientsRegister() {
                   <Input
                     value={phone}
                     name="phone"
-                    className={styles.inputs}
-                    onChange={handlerInput}
-                  />
-                </Form.Item>
-
-                <Form.Item
-                  className={styles.form_item}
-                  name={"Dirección"}
-                  label="Dirección"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Por favor, ingresa tu dirección",
-                    },
-                  ]}
-                >
-                  <Input
-                    value={adress}
-                    name="adress"
                     className={styles.inputs}
                     onChange={handlerInput}
                   />
