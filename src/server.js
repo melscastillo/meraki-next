@@ -39,7 +39,7 @@ const signUpPhotographers = async (request) => {
 //Agregar fotografas
 const addPhotos = async (id, data) => {
   const response = await fetch(`${URL_BASE}photographers/${id}/upload`, {
-    method: "POST",
+    method: "PATCH",
     body: data,
     /*    headers: {
       "Content-Type": "multipart/form-data",
