@@ -76,7 +76,7 @@ const RegistroFotografa = () => {
             <p className={styles.iniciaSesion}>
               {" "}
               <Link href="/login" passHref>
-              <a>Inicia Sesión</a>
+                <a>Inicia Sesión</a>
               </Link>
             </p>
             <Form layout="vertical" onFinish={onFinish}>
@@ -170,31 +170,35 @@ const RegistroFotografa = () => {
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="website"
+                label={<img width="24" src="/images/Icons/sphere.svg" />}
               >
-                <img width="24" src="/images/Icons/sphere.svg" />
+
                 <Input placeholder="" type="url" />
               </Form.Item>
 
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="facebook"
+                label={<img width="24" src="/images/Icons/facebook.svg" />}
               >
-                <img width="24" src="/images/Icons/facebook.svg" />
+
                 <Input placeholder="" type="url" />
               </Form.Item>
 
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="instagram"
+                label={<img width="24" src="/images/Icons/instagram.svg" />}
               >
-                <img width="24" src="/images/Icons/instagram.svg" />
+
                 <Input type="url" />
               </Form.Item>
               <Form.Item
                 className={cx(styles.formItem, styles.socialInput)}
                 name="linkedin"
+                label={<img width="24" src="/images/Icons/linkedin.svg" />}
               >
-                <img width="24" src="/images/Icons/linkedin.svg" />
+
                 <Input type="url" />
               </Form.Item>
               <p className={styles.textLabel}>
