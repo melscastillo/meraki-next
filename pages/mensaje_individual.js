@@ -10,6 +10,7 @@ import {
   Divider,
   Input,
 } from "antd";
+import Link from "next/link";
 
 const { Sider, Content } = Layout;
 const { TextArea } = Input;
@@ -49,9 +50,11 @@ function VerMensaje() {
                 </a>
               </List>
               <List className={styles.item}>
-                <a Mis Ofertas>
+              <Link href="/mensaje_fotografa" passHref>
+                <a Mis Mensajes>
                   {"Mis Mensajes"}
                 </a>
+                </Link>
               </List>
               <List className={styles.item}>
                 <a Mis Ofertas>

@@ -1,9 +1,8 @@
 import styles from "../../styles/Login.module.css";
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
-
 import { loginClients, loginPhotographers } from "../server";
-
 import Navbar from "./Navbar";
+import Link from "next/link";
 
 function Login() {
   const onFinish = async (values) => {
@@ -45,7 +44,9 @@ function Login() {
           </div>
 
           <div>
-            <Button className={styles.button_pink}>REGISTRATE</Button>
+            <Link href="/registrate_como">
+              <Button className={styles.button_pink}>REGISTRATE</Button>
+            </Link>
           </div>
         </Col>
       </Row>

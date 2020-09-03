@@ -13,6 +13,7 @@ import {
 
 import { signUp } from "../server";
 import Password from "antd/lib/input/Password";
+import Link from "next/link";
 
 function ClientsRegister() {
   const [form] = Form.useForm();
@@ -111,7 +112,11 @@ function ClientsRegister() {
           <div className={styles.form_wrapper}>
             <div>
               <h2 className={styles.text}>¿Ya tienes una cuenta?</h2>
-              <h2 className={styles.textPers}>Inicia Sesion</h2>
+              <h2 className={styles.textPers}>
+                <Link href="/login" passHref>
+                  <a>Inicia Sesion</a>
+                </Link>
+              </h2>
             </div>
             <div>
               <Form

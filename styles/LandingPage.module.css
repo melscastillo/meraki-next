@@ -8,6 +8,7 @@
   margin-bottom: 80px; 
   margin-top: 90px;
   
+  
 }
 
 .textDiv {
@@ -97,16 +98,14 @@
   font-weight: 700;
   text-shadow: 2px 4px 2px lightgray;
   color: #2b2d42;
-  margin-left: 750px;
+  text-align: center;
   margin-top: 100px;
 }
 
 .cardCase{
-  width: 1500px;
   height: 550px;
   background-color: #2b2d42;
   border-radius: 35px;
-  margin-left: 200px;
   margin-top: 50px;
 
   
@@ -117,12 +116,11 @@
 }
 
 .imgCardCase{
-  width: 450px;
+  width: 35%;
   height: 450px;
   border-radius: 35px;
-  margin-left: -100px;
   margin-top: 25px;
-  
+  object-fit: cover;
 }
 
 .textCardCase{
@@ -200,6 +198,13 @@
 
 
 @media screen and (max-width: 600px) {
+
+  .cards {
+    flex-direction: column;
+  }
+  .insideCard{
+    margin-bottom: 55px;
+  }
   .h2 {
     font-size: 1.5rem;
   }

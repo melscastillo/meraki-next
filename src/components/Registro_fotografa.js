@@ -2,7 +2,7 @@ import { useState } from "react";
 import cx from "classnames";
 import { Row, Col, Form, Input, Button, Checkbox, Upload } from "antd";
 import styles from "../../styles/RegistroFotografa.module.css";
-
+import Link from "next/link";
 import { signUpPhotographers, addPhotos } from "../server";
 import Droppi from "../components/Dropzone";
 
@@ -75,7 +75,9 @@ const RegistroFotografa = () => {
             <p className={styles.title}>¿Ya tienes una cuenta?</p>
             <p className={styles.iniciaSesion}>
               {" "}
+              <Link href="/login" passHref>
               <a>Inicia Sesión</a>
+              </Link>
             </p>
             <Form layout="vertical" onFinish={onFinish}>
               <Form.Item
