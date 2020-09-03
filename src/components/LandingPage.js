@@ -1,4 +1,4 @@
-import { Row, Col, Card, Carousel, Rate } from "antd";
+import { Row, Col, Card, Carousel, Rate, Button } from "antd";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import {
@@ -8,7 +8,6 @@ import {
   InstagramOutlined,
 } from "@ant-design/icons";
 import styles from "../../styles/LandingPage.module.css";
-
 
 function LandingPage() {
   return (
@@ -64,26 +63,6 @@ function LandingPage() {
               </div>
             </Card>
 
-            <Card
-              className={styles.insideCard}
-              hoverable
-              style={{ width: 419, height: 414 }}
-              cover={
-                <img
-                  className={styles.imgCard}
-                  alt="example"
-                  src="/images/undraw_asset_selection_ix3v.svg"
-                />
-              }
-            >
-              <div>
-                <p className={styles.pTittle}>Publica tus ofertas laborales</p>
-                <p className={styles.pText}>
-                  Recibe diferentes cotizaciones y concreta con quien más te
-                  guste.
-                </p>
-              </div>
-            </Card>
             <Card
               className={styles.insideCard}
               hoverable
@@ -188,6 +167,36 @@ function LandingPage() {
               />
             </Card>
           </div>
+          </Col>
+            </Row>
+
+            
+              <Row>
+                <Col span = {24}>
+            <Card className={styles.cardDonate}>
+              <div className = {styles.downCardDonate}>
+              <p className={styles.textCardDonate}>
+                ¡Ayúdanos a mantener viva Meraki!
+              </p>
+              <p className={styles.fontCardDonate}>
+                Con tu donativo, podemos seguir difundiendo el trabajo de
+                mujeres fotógrafas y contactarlas con diferentes clientes en
+                todo el país
+              </p>
+              </div>
+              <div className={styles.downCardDonate}>
+                <img
+                  className={styles.imgCardDonate}
+                  src="/images/undraw_landing_page_q6hh.svg"
+                />
+                <Button>DONAR</Button>
+              </div>
+            </Card>
+      </Col>
+      </Row>
+
+              <Row>
+                <Col span = {24}>
           <footer className={styles.footer}>
             <p>MERAKI, 2020.</p>
             <hr />

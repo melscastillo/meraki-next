@@ -106,9 +106,7 @@
   height: 550px;
   background-color: #2b2d42;
   border-radius: 35px;
-  margin-top: 50px;
-
-  
+  margin-top: 50px; 
 }
 .cardCase > div:first-of-type{
   display: flex;
@@ -167,6 +165,22 @@
   align-items: flex-end;
 }
 
+.cardDonate{
+  
+}
+.imgCardDonate{
+ 
+}
+.textCardDonate {
+  
+}
+.fontCardDonate{
+ 
+}
+.downCardDonate{
+  
+}
+
 .footer{
   background-color: #2b2d42;
   color: #fff;
@@ -193,7 +207,6 @@
   display: inline-block;
   margin: 0 35px;
   font-size: 20px;
-
 }
 
 
