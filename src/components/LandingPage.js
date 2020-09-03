@@ -1,4 +1,4 @@
-import { Row, Col, Card, Carousel, Rate } from "antd";
+import { Row, Col, Card, Carousel, Rate, Button } from "antd";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import {
@@ -183,6 +183,53 @@ function LandingPage() {
                 src="/images/photo-1481882466320-51765fd9fe21.jpeg"
               />
             </Card>
+          </div>
+          <div className={styles.donate}>
+            <div className={styles.donateText}>
+              <h3>¡Ayúdanos a mantener viva Meraki!</h3>
+              <p>
+                Con tu donativo, podemos seguir difundiendo el trabajo de
+                mujeres fotógrafas y contactarlas con diferentes clientes en
+                todo el país
+              </p>
+              <form
+                action="https://www.paypal.com/cgi-bin/webscr"
+                method="post"
+                target="_top"
+              >
+                <input type="hidden" name="cmd" value="_donations" />
+                <input
+                  type="hidden"
+                  name="business"
+                  value="merakifoto0@gmail.com"
+                />
+                <input
+                  type="hidden"
+                  name="item_name"
+                  value="Con tu donativo podemos seguir difundiendo el trabajo de fotografas mexicanas y conectarlas con clientes de todo el pais. "
+                />
+                <input type="hidden" name="currency_code" value="MXN" />
+                <input
+                  type="image"
+                  src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif"
+                  border="0"
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Donar con el botón PayPal"
+                  width = "150"
+                />
+                <img
+                  alt=""
+                  border="0"
+                  src="https://www.paypal.com/es_MX/i/scr/pixel.gif"
+                  width="1"
+                  height="1"
+                />
+              </form>
+            </div>
+            <div className={styles.donateImg}>
+              <img src="/images/undraw_landing_page_q6hh.svg" />
+            </div>
           </div>
           <footer className={styles.footer}>
             <p>MERAKI, 2020.</p>
