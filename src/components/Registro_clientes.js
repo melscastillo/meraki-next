@@ -100,7 +100,11 @@ function ClientsRegister() {
         </Col>
         <Col xs={24} sm={0} md={0} lg={0} xl={0}>
           <div>
-            <h1 className={styles.meraki_mobile}>MERAKI </h1>
+            <h1 className={styles.meraki_mobile}>
+              <Link href="/" passHref>
+                <a>MERAKI</a>
+              </Link>
+            </h1>
           </div>
         </Col>
         <Col
@@ -140,7 +144,6 @@ function ClientsRegister() {
                   ]}
                 >
                   <Input
-
                     value={nameCt}
                     name="nameCt"
                     className={styles.inputs}
@@ -191,7 +194,6 @@ function ClientsRegister() {
                   className={styles.form_item}
                   label="Contraseña"
                   name={"password"}
-
                   rules={[
                     {
                       required: true,
