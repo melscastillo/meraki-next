@@ -1,6 +1,6 @@
 import { Row, Col, Card, Carousel, Rate, Button } from "antd";
 import Link from "next/link";
-import Head from "next/head"
+import Head from "next/head";
 import Navbar from "./Navbar";
 import {
   TwitterOutlined,
@@ -13,7 +13,7 @@ import styles from "../../styles/LandingPage.module.css";
 function LandingPage() {
   return (
     <>
-    <Head>
+      <Head>
         <title>Meraki</title>
       </Head>
       <Row>
@@ -201,18 +201,12 @@ function LandingPage() {
                 method="post"
                 target="_top"
               >
-                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="cmd" value="_s-xclick" />
                 <input
                   type="hidden"
-                  name="business"
-                  value="meraki.app.bc@gmail.com"
+                  name="hosted_button_id"
+                  value="LBGT6XNN2NVNE"
                 />
-                <input
-                  type="hidden"
-                  name="item_name"
-                  value="Con tu donativo podemos seguir difundiendo el trabajo de fotografas mexicanas y conectarlas con clientes de todo el pais. "
-                />
-                <input type="hidden" name="currency_code" value="MXN" />
                 <input
                   type="image"
                   src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_donateCC_LG.gif"
@@ -220,7 +214,6 @@ function LandingPage() {
                   name="submit"
                   title="PayPal - The safer, easier way to pay online!"
                   alt="Donar con el botón PayPal"
-                  width="150"
                 />
                 <img
                   alt=""
