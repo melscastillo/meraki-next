@@ -51,12 +51,15 @@ const Vista = () => {
     },
   ];
   const id = router.query.id
-  useEffect(async () => {
-    const response = await getPhotographer(id);
-    if (response.data) {
-      console.log(response.data.photographer)
-      setPhotographer(response.data.photographer);
-    }
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const response = await getPhotographer(id);
+      if (response.data) {
+        console.log(response.data.photographer)
+        setPhotographer(response.data.photographer);
+      }
+    } 
+    fetchProfile ();
   }, []);
   const { name, description, imagesUrl } = photographer
   console.log('name:', name)

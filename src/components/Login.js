@@ -1,7 +1,6 @@
 import styles from "../../styles/Login.module.css";
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 import { loginClients, loginPhotographers } from "../server";
-import { Redirect } from 'react-router-dom'
 import { useRouter } from 'next/router'
 import Navbar from "./Navbar";
 import Link from "next/link";

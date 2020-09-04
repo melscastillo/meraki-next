@@ -43,6 +43,12 @@
     margin-left: 15px;
 }
 
+.buttonBack:hover{
+    border: 1px solid #9bbfb8;
+    color: #9bbfb8;
+    background-color: #fff;
+}
+
 .avatar{
     margin-left: 190px;
 }
