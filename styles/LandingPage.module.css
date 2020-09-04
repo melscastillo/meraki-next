@@ -156,17 +156,17 @@
   align-items: flex-end;
 }
 
-.donate{
+.donate {
   display: flex;
 }
 
-.donateText{
+.donateText {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 30px;
 }
-.donateText h3{
+.donateText h3 {
   color: #2b2d42;
   font-size: 40px;
   text-shadow: 2px 4px 2px lightgray;
@@ -175,24 +175,18 @@
   text-align: center;
 }
 
-.donateText p{
+.donateText p {
   color: #2b2d42;
   font-size: 25px;
   font-weight: 700;
 }
-.donateText form{
-  
+.donateText form {
   padding: 10px 0 15px;
- 
-  
-  
   align-self: center;
-
 }
-.donateImg img{
+.donateImg img {
   object-fit: cover;
   width: 100%;
-
 }
 
 .footer {
@@ -274,7 +268,6 @@
     width: 50%;
   }
 
-  
   .footer {
     padding: 50px 10px;
   }
@@ -304,17 +297,15 @@
     padding-right: 2rem;
   }
 
-  .donate{
+  .donate {
     flex-direction: column;
     margin-top: 100px;
   }
   .donateImg {
     text-align: center;
   }
-  .donateImg img{
+  .donateImg img {
     width: 70%;
-    
-  
   }
   .footer {
     padding: 50px 10px;

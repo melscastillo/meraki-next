@@ -1,14 +1,51 @@
-.regresar{
-    color: #2b2d42;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 35px;   
+.regresar {
+  color: #2b2d42;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 35px;
 }
 
-.name{
-    color: #2b2d42;
-    font-size: 40px;
-    font-weight: 700;
-    text-shadow: 0px 3px 2px rgb(156, 156, 156);
-    
+.regresar a:hover {
+  color: #9bbfb8;
+}
+
+.name {
+  color: #2b2d42;
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 0px 3px 2px rgb(156, 156, 156);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.description {
+  color: #2b2d42;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  padding: 1px 15px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  align-self: center;
+}
+
+.ul li {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 25px;
+}
+
+.ul li a svg {
+  fill: #df928e;
+}
+.ul li a:hover svg {
+  fill: #9bbfb8;
 }

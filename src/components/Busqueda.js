@@ -65,11 +65,11 @@ const Busqueda = () => {
   }, []);
 
 
-  const UICards = photographers.map(({ name, imagesUrl, _id }) => {
+  const UICards = photographers.map(({ name, lastName, imagesUrl, _id }) => {
 
     const image = imagesUrl[1]
     return (
-      <Resultado key ={_id} image={image} name={name} id={_id} />
+      <Resultado key ={_id} image={image} name={name} lastName = {lastName} id={_id} />
     )
   })
 
