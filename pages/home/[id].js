@@ -23,6 +23,11 @@ const Vista = () => {
   const [photographer, setPhotographer] = useState({});
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) router.push("/login");
+  });
+
+  useEffect(() => {
     const fetchProfile = async () => {
       const response = await getPhotographer(id);
       if (response.data) {
@@ -45,68 +50,68 @@ const Vista = () => {
 
   return (
     <>
-    <Head>
-      <title>
-        Perfil {name} {lastName} - Meraki
-      </title>
-    </Head>
-    <Row>
-      <Col offset={4} span={16}>
-        <Row>
-          <Col span={24}>
-            <p className={styles.regresar}>
-              <Link href="/busqueda" passHref>
-                <a>REGRESAR A RESULTADOS DE BÚSQUEDA</a>
-              </Link>
-            </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col  className = {styles.col} span={24}>
-            <p className={styles.name}>
-              {name} {lastName}
-            </p>
-            <p className={styles.description}> {description}</p>
-            <ul className={styles.ul}>
-              {website && (
-                <li>
-                  <a href={website}>
-                    <GlobalOutlined />
-                  </a>
-                </li>
-              )}
-              {facebook && (
-                <li>
-                <a href={facebook}>
-                  <FacebookOutlined />
-                </a>
-              </li>
-              )}
-              {instagram && (
-                <li>
-                <a href={instagram}>
-                  <InstagramOutlined />
-                </a>
-              </li>
-              )}
-              {linkedin && (
-                <li>
-                <a href={linkedin}>
-                  <LinkedinOutlined/>
-                </a>
-              </li>
-              )}
-            </ul>
-          </Col>
-        </Row>
-        ​
-        <Row>
-          <Col span={24}>
-            <Galeria photos={imagesUrl} />
-          </Col>
-        </Row>
-      </Col>
-    </Row>
+      <Head>
+        <title>
+          Perfil {name} {lastName} - Meraki
+        </title>
+      </Head>
+      <Row>
+        <Col offset={4} span={16}>
+          <Row>
+            <Col span={24}>
+              <p className={styles.regresar}>
+                <Link href="/busqueda" passHref>
+                  <a>REGRESAR A RESULTADOS DE BÚSQUEDA</a>
+                </Link>
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            <Col className={styles.col} span={24}>
+              <p className={styles.name}>
+                {name} {lastName}
+              </p>
+              <p className={styles.description}> {description}</p>
+              <ul className={styles.ul}>
+                {website && (
+                  <li>
+                    <a href={website}>
+                      <GlobalOutlined />
+                    </a>
+                  </li>
+                )}
+                {facebook && (
+                  <li>
+                    <a href={facebook}>
+                      <FacebookOutlined />
+                    </a>
+                  </li>
+                )}
+                {instagram && (
+                  <li>
+                    <a href={instagram}>
+                      <InstagramOutlined />
+                    </a>
+                  </li>
+                )}
+                {linkedin && (
+                  <li>
+                    <a href={linkedin}>
+                      <LinkedinOutlined />
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </Col>
+          </Row>
+          ​
+          <Row>
+            <Col span={24}>
+              <Galeria photos={imagesUrl} />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </>
   );
 };

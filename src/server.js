@@ -1,6 +1,6 @@
 import request from "superagent";
 
-const URL_BASE = "https://meraki-app-wacky-wombat-oe.mybluemix.net/";
+const URL_BASE = "http://meraki-app-unexpected-mongoose-hn.mybluemix.net/";
 const URL_LOCAL = " http://localhost:8080/";
 
 const getClients = async () => {
@@ -95,5 +95,5 @@ export {
   loginPhotographers,
   addPhotos,
   getPhotographers,
-  getPhotographer
+  getPhotographer,
 };
