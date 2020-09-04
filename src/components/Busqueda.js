@@ -6,52 +6,11 @@ import React, { useEffect, useState } from "react";
 import { getPhotographers } from '../server'
 
 const Busqueda = () => {
+
+  const [originalSearch, setOriginalSearch] = useState([])
   const [photographers, setPhotographers] = useState([])
   const [filteredPhotos, setFilteredPhotos] = useState([])
-  const [category, setCategory] = useState("")
-  /*  const handleInputChange = (key, value) => {
- 
-     console.log("propKey", key)
-     console.log("propValue", value)
-     if (key === "eventos") {
- 
-       setCategory(value.value);
-       console.log("Selected:", category);
-     } else if (key === "retrato") {
-       setCategory(value.value);
-       console.log("Selected:", category);
-     } else if (key === "fotografiadeproducto") {
-       setCategory(value.value);
-       console.log("Selected:", category);
-     } else if (name === "password") {
-       setpassword(value);
-       console.log("Selected: ", password);
-     } else if (name === "phone") {
-       setphone(value);
-       console.log("Phone:", phone);
-     } else if (name === "adress") {
-       setadress(value);
-       console.log("Address:", adress);
-     } else if (name === "profilepicture") {
-       setprofilepicture(value);
-       console.log("Profilepic:", profilepicture);
-     }
-   }; */
-  function handleChange(value) {
-    console.log("value: ", value);
-    if (value === "eventos") {
-      setCategory(value);
-
-    } else if (value === "retrato") {
-      setCategory(value);
-
-    } else if (value === "fotografiadeproducto") {
-      setCategory(value);
-
-    }
-    console.log("Selected:", category);
-  }
-
+  const [isFiltered, setIsFiltered] = useState(false)
 
   useEffect(() => {
     async function getallPhotographers() {
@@ -59,17 +18,58 @@ const Busqueda = () => {
 
       if (response.data.photograpers) {
         setPhotographers(response.data.photograpers);
+        setOriginalSearch(response.data.photograpers)
       }
     }
     getallPhotographers();
   }, []);
 
-
   const UICards = photographers.map(({ name, imagesUrl, _id }) => {
 
     const image = imagesUrl[1]
     return (
-      <Resultado key ={_id} image={image} name={name} id={_id} />
+      <Resultado key={_id} image={image} name={name} id={_id} />
+    )
+  })
+
+  function handleChange(value) {
+    console.log("value: ", value);
+    if (value === "Eventos") {
+      const arr = filteredArray(value)
+      setPhotographers(arr);
+    } else if (value === "Retrato") {
+      const arr = filteredArray(value)
+      setPhotographers(arr);
+    } else if (value === "Fotografía de Producto") {
+      const arr = filteredArray(value)
+      setPhotographers(arr);
+    } else if (value === "Fotografía de Moda") {
+      const arr = filteredArray(value)
+      setPhotographers(arr);
+    } else if (value === "Fotografía Documental o Fotoperiodismo") {
+      const arr = filteredArray(value)
+      setPhotographers(arr);
+    } else {
+      setPhotographers(originalSearch)
+    }
+  }
+
+  const filteredArray = (category) => {
+    console.log(originalSearch)
+    const rest = originalSearch.filter((item) => {
+      let catArray = item.category
+      if (catArray.includes(category)) {
+        return item
+      }
+    })
+    console.log(rest)
+    return rest
+  }
+
+  const UIFilteredCrds = filteredPhotos.map(({ name, imagesUrl, _id }) => {
+    const image = imagesUrl[1]
+    return (
+      <Resultado key={_id} image={image} name={name} id={_id} />
     )
   })
 
@@ -79,7 +79,7 @@ const Busqueda = () => {
         <Col className={styles.logo} offset={1} span={5}>
           MERAKI
         </Col>
-        <Col className = {styles.alv} span={17}>
+        <Col className={styles.alv} span={17}>
           <Avatar size={50} className={styles.avatar} src="/images/photo-1573878733211-a503d390fdd0.jpeg" />
           <Button className={styles.buttonBack}>REGRESAR</Button>
         </Col>
@@ -92,21 +92,22 @@ const Busqueda = () => {
               <Select className={styles.select}
                 showSearch
                 optionFilterProp="children"
-                value="value"
+                defaultValue="Todos"
                 onChange={handleChange}
                 filterOption={(input, option) =>
                   option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                 }
               >
-                <Select.Option value="eventos" key="eventos" className={styles.selectOption} >Eventos</Select.Option>
-                <Select.Option value="retrato" key="retrato" className={styles.selectOption} >Retrato</Select.Option>
-                <Select.Option value="fotografiadeproducto" key="fotografiadeproducto" className={cx(styles.typography, styles.selectOption)}>
+                <Select.Option value="Todos" key="eventos" className={styles.selectOption} >Todas</Select.Option>
+                <Select.Option value="Eventos" key="eventos" className={styles.selectOption} >Eventos</Select.Option>
+                <Select.Option value="Retrato" key="retrato" className={styles.selectOption} >Retrato</Select.Option>
+                <Select.Option value="Fotografía de Producto" key="fotografiadeproducto" className={cx(styles.typography, styles.selectOption)}>
                   Fotografía de Producto
               </Select.Option>
-                <Select.Option key="fotografiademoda" className={styles.selectOption} value="fotografiademoda">
+                <Select.Option key="Fotografía de Moda" className={styles.selectOption} value="Fotografía de Moda">
                   Fotografía de Moda
               </Select.Option>
-                <Select.Option key="FotografíaDocumentaloFotoperiodismo" className={styles.selectOption} value="fotografiadocumentalofotoperiodismo">
+                <Select.Option key="Fotografía Documental o Fotoperiodismo" className={styles.selectOption} value="Fotografía Documental o Fotoperiodismo">
                   Fotografía Documental o Fotoperiodismo
               </Select.Option>
               </Select>
@@ -116,10 +117,6 @@ const Busqueda = () => {
       </Row>
       <Row>
         {UICards}
-        {/*         <Resultado image="/images/photo-1531898611418-0ceb51a8e0ad.jpeg" name="Nitzelli Villa" />
-        <Resultado image="/images/photo-1570536205668-ab1bdc67b4aa.jpeg" name="Iliana Maldonado" />
-        <Resultado image="/images/photo-1568759532835-15e70ca7946f.jpeg" name="Melissa Castillo" />
-        <Resultado image="/images/photo-1575865641151-ad4fddb7b418.jpeg" name="Karen Corona" /> */}
       </Row>
     </>
   );
