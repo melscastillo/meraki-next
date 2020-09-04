@@ -316,4 +316,8 @@
   }
 }
 @media screen and (max-width: 570px) {
+  .right {
+    display: flex;
+    align-items: flex-end;
+  }
 }
