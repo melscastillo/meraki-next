@@ -69,7 +69,7 @@ const Busqueda = () => {
 
     const image = imagesUrl[1]
     return (
-      <Resultado image={image} name={name} id={_id} />
+      <Resultado key ={_id} image={image} name={name} id={_id} />
     )
   })
 
