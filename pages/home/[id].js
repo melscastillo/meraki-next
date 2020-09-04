@@ -75,28 +75,28 @@ const Vista = () => {
               <ul className={styles.ul}>
                 {website && (
                   <li>
-                    <a href={website}>
+                    <a target = "_blank" rel = "noopener" href={website}>
                       <GlobalOutlined />
                     </a>
                   </li>
                 )}
                 {facebook && (
                   <li>
-                    <a href={facebook}>
+                    <a target = "_blank" rel = "noopener" href={facebook}>
                       <FacebookOutlined />
                     </a>
                   </li>
                 )}
                 {instagram && (
                   <li>
-                    <a href={instagram}>
+                    <a target = "_blank" rel = "noopener" href={instagram}>
                       <InstagramOutlined />
                     </a>
                   </li>
                 )}
                 {linkedin && (
                   <li>
-                    <a href={linkedin}>
+                    <a target = "_blank" rel = "noopener" href={linkedin}>
                       <LinkedinOutlined />
                     </a>
                   </li>

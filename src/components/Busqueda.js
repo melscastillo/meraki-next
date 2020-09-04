@@ -126,7 +126,7 @@ const Busqueda = () => {
                 <Select.Option
                   value="Fotografía de Producto"
                   key="fotografiadeproducto"
-                  className={cx(styles.typography, styles.selectOption)}
+                  className={styles.selectOption}
                 >
                   Fotografía de Producto
                 </Select.Option>
