@@ -18,7 +18,11 @@ function PerfilCliente() {
             xl={24}
           >
             <div>
-              <p className={styles.meraki}>MERAKI</p>
+              <p className={styles.meraki}>
+                <Link href="/" passHref>
+                  <a>MERAKI</a>
+                </Link>
+              </p>
             </div>
             <div>
               <Avatar

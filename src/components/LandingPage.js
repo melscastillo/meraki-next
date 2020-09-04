@@ -1,5 +1,6 @@
 import { Row, Col, Card, Carousel, Rate, Button } from "antd";
 import Link from "next/link";
+import Head from "next/head"
 import Navbar from "./Navbar";
 import {
   TwitterOutlined,
@@ -12,6 +13,9 @@ import styles from "../../styles/LandingPage.module.css";
 function LandingPage() {
   return (
     <>
+    <Head>
+        <title>Meraki</title>
+      </Head>
       <Row>
         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
           <Navbar />

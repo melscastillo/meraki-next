@@ -77,7 +77,11 @@ const RegistroFotografa = () => {
       <Col xs={24} md={16} sm={2}>
         <Row>
           <Col offset={6} md={24} sm={24} xs={{ offset: 0 }}>
-            <h1 className={styles.logo}>MERAKI</h1>
+            <h1 className={styles.logo}>
+              <Link href="/" passHref>
+                <a>MERAKI</a>
+              </Link>
+            </h1>
 
             <div className={styles.content_wrapper}>
               <p className={styles.title}>¿Ya tienes una cuenta?</p>

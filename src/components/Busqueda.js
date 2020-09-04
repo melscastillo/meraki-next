@@ -3,8 +3,13 @@ import cx from "classnames";
 import styles from "../../styles/Busqueda.module.css";
 import Resultado from "./Resultado";
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import Link from "next/link";
 import { getPhotographers } from "../server";
+=======
+import { getPhotographers } from "../server";
+import Link from "next/link";
+>>>>>>> 2304d9b7fcfc383c4eb7f8755a2bbb9a4ca25c40
 
 const Busqueda = () => {
   const [originalSearch, setOriginalSearch] = useState([]);
@@ -72,7 +77,9 @@ const Busqueda = () => {
     <>
       <Row>
         <Col className={styles.logo} offset={1} span={5}>
-          MERAKI
+          <Link href="/" passHref>
+            <a>MERAKI</a>
+          </Link>
         </Col>
         <Col className={styles.alv} span={17}>
           <Avatar
@@ -80,9 +87,13 @@ const Busqueda = () => {
             className={styles.avatar}
             src="/images/photo-1573878733211-a503d390fdd0.jpeg"
           />
+<<<<<<< HEAD
           <Link href="/logout">
             <Button className={styles.buttonBack}>SALIR</Button>
           </Link>
+=======
+          <Button className={styles.buttonBack}>REGRESAR</Button>
+>>>>>>> 2304d9b7fcfc383c4eb7f8755a2bbb9a4ca25c40
         </Col>
       </Row>
       <Row>
