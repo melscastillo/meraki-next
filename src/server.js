@@ -1,6 +1,7 @@
 import request from "superagent";
 
-const URL_BASE = " http://localhost:8080/";
+const URL_BASE = " https://meraki-app-grumpy-raven-vv.mybluemix.net/";
+const URL_LOCAL = " http://localhost:8080/";
 
 const getClients = async () => {
   const response = await fetch(`${URL_BASE}clients`);

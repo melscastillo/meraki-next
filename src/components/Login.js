@@ -24,12 +24,12 @@ function Login() {
         console.log("Response 2:", accessToken);
         localStorage.setItem("token", accessToken);
 
-        router.push('/busqueda')
+        router.push('/home')
       } else {
         const accessToken = response.data.token;
         console.log(accessToken);
         localStorage.setItem("token", accessToken);
-        router.push('/busqueda')
+        router.push('/home')
       }
     } catch (error) {
       console.log("error", error);

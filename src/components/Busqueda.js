@@ -63,7 +63,7 @@ const Busqueda = () => {
     }
     getallPhotographers();
   }, []);
-  
+
 
   const UICards = photographers.map(({ name, imagesUrl, _id }) => {
 
