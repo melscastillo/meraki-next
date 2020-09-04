@@ -5,28 +5,28 @@ import dynamic from "next/dynamic";
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getPhotographer } from '../../src/server'
-
+​
 const Galeria = dynamic(() => import("../../src/components/Galeria"), {
   ssr: false,
 });
-
+​
 const Vista = () => {
   const router = useRouter()
   const id = router.query.id;
   const [photographer, setPhotographer] = useState({})
-
+​
   useEffect(() => {
     const fetchProfile = async () => {
       const response = await getPhotographer(id);
       if (response.data) {
         setPhotographer(response.data.photographer);
       }
-    }
-    if (id) fetchProfile();
+    } 
+    if (id) fetchProfile ();
   }, [id]);
-
+​
   const { name, description, imagesUrl } = photographer
-
+​
   return (
     <Row>
       <Col offset={4} span={16}>
@@ -49,7 +49,7 @@ const Vista = () => {
             </p>
           </Col>
         </Row>
-
+​
         <Row>
           <Col span={24}>
             <Galeria photos={imagesUrl} />
@@ -59,5 +59,5 @@ const Vista = () => {
     </Row>
   );
 };
-
+​
 export default Vista;
