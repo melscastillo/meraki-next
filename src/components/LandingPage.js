@@ -201,7 +201,7 @@ function LandingPage() {
                 <input
                   type="hidden"
                   name="business"
-                  value="merakifoto0@gmail.com"
+                  value="meraki.app.bc@gmail.com"
                 />
                 <input
                   type="hidden"

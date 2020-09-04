@@ -69,17 +69,17 @@ const Busqueda = () => {
 
     const image = imagesUrl[1]
     return (
-      <Resultado image={image} name={name} id={_id} />
+      <Resultado key ={_id} image={image} name={name} id={_id} />
     )
   })
 
   return (
     <>
       <Row>
-        <Col className={styles.logo} offset={1} span={16}>
+        <Col className={styles.logo} offset={1} span={5}>
           MERAKI
         </Col>
-        <Col span={6}>
+        <Col className = {styles.alv} span={17}>
           <Avatar size={50} className={styles.avatar} src="/images/photo-1573878733211-a503d390fdd0.jpeg" />
           <Button className={styles.buttonBack}>REGRESAR</Button>
         </Col>
@@ -98,15 +98,15 @@ const Busqueda = () => {
                   option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                 }
               >
-                <Select.Option value="eventos" key="eventos" className={cx(styles.typography, styles.selectOption)} >Eventos</Select.Option>
-                <Select.Option value="retrato" key="retrato" className={cx(styles.typography, styles.selectOption)} >Retrato</Select.Option>
+                <Select.Option value="eventos" key="eventos" className={styles.selectOption} >Eventos</Select.Option>
+                <Select.Option value="retrato" key="retrato" className={styles.selectOption} >Retrato</Select.Option>
                 <Select.Option value="fotografiadeproducto" key="fotografiadeproducto" className={cx(styles.typography, styles.selectOption)}>
                   Fotografía de Producto
               </Select.Option>
-                <Select.Option key="fotografiademoda" className={cx(styles.typography, styles.selectOption)} value="fotografiademoda">
+                <Select.Option key="fotografiademoda" className={styles.selectOption} value="fotografiademoda">
                   Fotografía de Moda
               </Select.Option>
-                <Select.Option key="FotografíaDocumentaloFotoperiodismo" className={cx(styles.typography, styles.selectOption)} value="fotografiadocumentalofotoperiodismo">
+                <Select.Option key="FotografíaDocumentaloFotoperiodismo" className={styles.selectOption} value="fotografiadocumentalofotoperiodismo">
                   Fotografía Documental o Fotoperiodismo
               </Select.Option>
               </Select>
