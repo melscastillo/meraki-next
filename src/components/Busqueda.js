@@ -63,6 +63,7 @@ const Busqueda = () => {
     }
     getallPhotographers();
   }, []);
+  
 
   const UICards = photographers.map(({ name, imagesUrl, _id }) => {
 
@@ -113,7 +114,7 @@ const Busqueda = () => {
           </Form>
         </Col>
       </Row>
-      <Row className={styles.typography}>
+      <Row>
         {UICards}
         {/*         <Resultado image="/images/photo-1531898611418-0ceb51a8e0ad.jpeg" name="Nitzelli Villa" />
         <Resultado image="/images/photo-1570536205668-ab1bdc67b4aa.jpeg" name="Iliana Maldonado" />
