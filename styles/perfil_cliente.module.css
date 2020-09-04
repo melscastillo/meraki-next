@@ -67,6 +67,8 @@
 .insideCard {
   text-align: center;
   box-shadow: 5px 5px 5px #dddddd;
+  width: 380px;
+  height: 400;
 }
 
 .imgCard {
@@ -133,4 +135,30 @@
 .button:focus .icon,
 .button:hover .icon {
   fill: #9bbfb8;
+}
+
+@media screen and (max-width: 570px) {
+  .meraki {
+    font-size: 25px;
+  }
+
+  .avatar {
+    width: 51px;
+    height: 49px;
+  }
+  .sider {
+    display: none;
+  }
+  .card_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .insideCard {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .bnt_wrapper {
+    margin-top: 0;
+  }
 }
