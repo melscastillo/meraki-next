@@ -25,7 +25,7 @@ const Vista = () => {
     if (id) fetchProfile ();
   }, [id]);
   
-  const { name, description, imagesUrl } = photographer
+  const { name, lastname, description, imagesUrl } = photographer
   
   return (
     <Row>
@@ -41,12 +41,8 @@ const Vista = () => {
         </Row>
         <Row>
           <Col span={24}>
-            <p>{name}</p>
-            <p>
-              Fotógrafa con más de 4 años de experiencia en fotografías de
-              bodas. Me encargo de hacer de tu evento un día que recordarás para
-              toda la vida.
-            </p>
+            <p className = {styles.name}>{name}</p>
+            <p className= {styles.description}> {description}</p>
           </Col>
         </Row>
 ​
