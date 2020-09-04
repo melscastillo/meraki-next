@@ -6,7 +6,7 @@ const BusquedaPage = () =>{
     return (
         <>
       <Head>
-        <title>Meraki-Busqueda</title>
+        <title>Busqueda - Meraki</title>
       </Head>
       <Busqueda/>
     </>
