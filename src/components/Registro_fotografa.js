@@ -110,7 +110,7 @@ const RegistroFotografa = () => {
                   form={form}
                   className={styles.formItem}
                   label="Apellido"
-                  name="apellido"
+                  name="lastName"
                   rules={[
                     {
                       required: true,
