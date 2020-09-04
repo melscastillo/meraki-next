@@ -95,5 +95,5 @@ export {
   loginPhotographers,
   addPhotos,
   getPhotographers,
-  getPhotographer
+  getPhotographer,
 };

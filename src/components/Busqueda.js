@@ -3,8 +3,8 @@ import cx from "classnames";
 import styles from "../../styles/Busqueda.module.css";
 import Resultado from "./Resultado";
 import React, { useEffect, useState } from "react";
-import { getPhotographers } from "../server";
 import Link from "next/link";
+import { getPhotographers } from "../server";
 
 const Busqueda = () => {
   const [originalSearch, setOriginalSearch] = useState([]);
@@ -82,7 +82,9 @@ const Busqueda = () => {
             className={styles.avatar}
             src="/images/photo-1573878733211-a503d390fdd0.jpeg"
           />
-          <Button className={styles.buttonBack}>REGRESAR</Button>
+          <Link href="/logout">
+            <Button className={styles.buttonBack}>SALIR</Button>
+          </Link>
         </Col>
       </Row>
       <Row>
